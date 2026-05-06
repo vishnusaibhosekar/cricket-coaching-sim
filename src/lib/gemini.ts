@@ -20,10 +20,10 @@ export async function scoreDecision(
     }
 
     const model = genAI.getGenerativeModel({
-        model: 'gemini-2.0-flash',
+        model: 'gemini-2.5-flash',
         generationConfig: {
             temperature: 0.3,
-            maxOutputTokens: 500,
+            maxOutputTokens: 1000,
             responseMimeType: 'application/json',
         }
     });
@@ -58,15 +58,15 @@ Score the fan's decision on these four dimensions (0-25 each, total 0-100):
 
 4. STRATEGIC CREATIVITY (0-25): Is there something clever or unconventional that could work? Bonus for non-obvious but sound tactical thinking.
 
-Respond in JSON only, no markdown:
+Respond in VALID JSON format ONLY. No markdown, no explanation, just JSON:
 {
-  "total_score": <0-100>,
-  "situation_awareness": <0-25>,
-  "matchup_intelligence": <0-25>,
-  "risk_reward": <0-25>,
-  "strategic_creativity": <0-25>,
-  "explanation": "<2-3 sentence analysis of the fan's decision>",
-  "comparison_to_captain": "<1 sentence comparing to what the captain actually did>"
+  "total_score": 75,
+  "situation_awareness": 18,
+  "matchup_intelligence": 20,
+  "risk_reward": 19,
+  "strategic_creativity": 18,
+  "explanation": "Brief analysis here",
+  "comparison_to_captain": "Comparison here"
 }`;
 
     try {

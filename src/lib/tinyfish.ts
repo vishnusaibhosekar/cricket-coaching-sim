@@ -1,5 +1,4 @@
 const TINYFISH_API_KEY = process.env.TINYFISH_API_KEY;
-const TINYFISH_API_URL = 'https://api.tinyfish.ai/v1';
 
 export async function fetchContent(url: string): Promise<string> {
     if (!TINYFISH_API_KEY) {
@@ -7,15 +6,14 @@ export async function fetchContent(url: string): Promise<string> {
     }
 
     try {
-        const response = await fetch(`${TINYFISH_API_URL}/fetch_content`, {
+        const response = await fetch('https://api.fetch.tinyfish.ai', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${TINYFISH_API_KEY}`,
+                'X-API-Key': TINYFISH_API_KEY,
             },
             body: JSON.stringify({
-                url,
-                max_length: 10000, // Limit response size
+                urls: [url],
             }),
         });
 
@@ -25,11 +23,11 @@ export async function fetchContent(url: string): Promise<string> {
 
         const data = await response.json();
 
-        // Extract the markdown content from response
-        if (data.content) {
-            return data.content;
-        } else if (data.text) {
-            return data.text;
+        // Extract the markdown content from results array
+        if (data.results && data.results.length > 0) {
+            return data.results[0].text || data.results[0].content || '';
+        } else if (data.errors && data.errors.length > 0) {
+            throw new Error(`TinyFish errors: ${JSON.stringify(data.errors)}`);
         } else {
             throw new Error('Unexpected response format from TinyFish');
         }

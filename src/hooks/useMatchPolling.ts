@@ -51,6 +51,13 @@ export function useMatchPolling(pollingInterval: number = 30000): UseMatchPollin
         const currentInnings = current.currentInnings === 1 ? current.team1 : current.team2;
         const prevInnings = prev.currentInnings === 1 ? prev.team1 : prev.team2;
 
+        // Check if we have valid data
+        if (!currentInnings || !prevInnings ||
+            typeof currentInnings.overs === 'undefined' ||
+            typeof prevInnings.overs === 'undefined') {
+            return;
+        }
+
         // Check for new over
         const currentOver = Math.floor(currentInnings.overs);
         const prevOver = Math.floor(prevInnings.overs);
