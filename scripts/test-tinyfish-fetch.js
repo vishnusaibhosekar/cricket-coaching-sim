@@ -82,7 +82,7 @@ async function testTinyFishFetch() {
 
                 console.log('\n🔍 Content analysis:');
                 console.log(`   - Contains "SRH" or "PBKS": ${content.includes('SRH') || content.includes('PBKS') ? '✅' : '❌'}`);
-                console.log(`   - Contains score pattern: ${/\d+\/\d+/.test(content) ? '✅' : '❌'}`);
+                console.log(`   - Contains score pattern (235-4 or 235/4): ${/\d+[-\/]\d+/.test(content) ? '✅' : '❌'}`);
                 console.log(`   - Contains "over" or "ov": ${content.toLowerCase().includes('over') || content.toLowerCase().includes('ov') ? '✅' : '❌'}`);
 
                 console.log('\n✅ TinyFish fetch test PASSED');
