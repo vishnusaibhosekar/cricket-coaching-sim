@@ -12,7 +12,7 @@ import { tacticalMomentsDB } from '@/lib/tactical-moments';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Trophy, Target } from 'lucide-react';
+import { ArrowLeft, Trophy, Target, BarChart3 } from 'lucide-react';
 import type { MatchState, BallDecision, CumulativeScore as CumulativeScoreType } from '@/lib/types';
 import { calculateCumulativeScore } from '@/lib/field-scoring';
 
@@ -191,6 +191,14 @@ export default function ReplayPage() {
                                 Score: {cumulativeScore.total_score}
                             </Badge>
                         )}
+                        <Button
+                            variant="outline"
+                            onClick={() => router.push('/game/leaderboard')}
+                            className="bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700"
+                        >
+                            <BarChart3 className="h-4 w-4 mr-2" />
+                            Leaderboard
+                        </Button>
                         <Badge className="text-lg bg-purple-600">
                             <Trophy className="h-4 w-4 mr-2" />
                             PBKS Innings
