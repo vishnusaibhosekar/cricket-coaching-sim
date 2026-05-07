@@ -142,6 +142,7 @@ export function BallDecisionCard({
                     <FieldMap
                         onSubmit={handleFieldSubmit}
                         maxFielders={9}
+                        matchPhase={matchPhase}
                     />
                 </div>
             )}

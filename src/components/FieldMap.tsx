@@ -49,32 +49,36 @@ const FIELD_ZONES: { id: FieldPosition; label: string; x: number; y: number; reg
     { id: 'third_man', label: 'Third Man', x: -55, y: -60, region: 'deep' },
 ];
 
+// Deep position IDs for powerplay rule
+const DEEP_POSITIONS: FieldPosition[] = [
+    'deep_point', 'deep_backward_point', 'deep_cover', 'deep_extra_cover',
+    'long_off', 'long_on', 'deep_midwicket', 'deep_square_leg',
+    'long_leg', 'fine_leg', 'third_man'
+];
+
 export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, matchPhase = 'middle', showActualZone }: FieldMapProps) {
     const [fielders, setFielders] = useState<Record<FieldPosition, number>>(
         FIELD_ZONES.reduce((acc, zone) => ({ ...acc, [zone.id]: 0 }), {} as Record<FieldPosition, number>)
     );
 
+    const isPowerplay = matchPhase === 'powerplay';
+    const MAX_DEEP_IN_POWERPLAY = 2;
+
+    // Compute values for UI
     const totalFielders = Object.values(fielders).reduce((sum, count) => sum + count, 0);
     const deepFielders = Object.entries(fielders)
-        .filter(([zoneId]) => FIELD_ZONES.find(z => z.id === zoneId)?.region === 'deep')
+        .filter(([id]) => DEEP_POSITIONS.includes(id as FieldPosition))
         .reduce((sum, [_, count]) => sum + count, 0);
-
-    const MAX_DEEP_IN_POWERPLAY = 2;
-    const isPowerplay = matchPhase === 'powerplay';
     const deepLimitReached = isPowerplay && deepFielders >= MAX_DEEP_IN_POWERPLAY;
 
     const handleZoneClick = useCallback((zoneId: FieldPosition) => {
         if (disabled) return;
 
-        const zone = FIELD_ZONES.find(z => z.id === zoneId);
-        if (!zone) return;
-
         setFielders(prev => {
             const current = prev[zoneId] || 0;
 
-            // Can't have more than 1 fielder per zone
+            // Toggle off if already placed
             if (current > 0) {
-                // Toggle off if already placed
                 return { ...prev, [zoneId]: current - 1 };
             }
 
@@ -85,12 +89,12 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, matchPha
             }
 
             // Powerplay: max 2 deep fielders
-            if (isPowerplay && zone.region === 'deep') {
+            if (isPowerplay && DEEP_POSITIONS.includes(zoneId)) {
                 const currentDeep = Object.entries(prev)
-                    .filter(([id]) => FIELD_ZONES.find(z => z.id === id)?.region === 'deep')
+                    .filter(([id]) => DEEP_POSITIONS.includes(id as FieldPosition))
                     .reduce((sum, [_, c]) => sum + c, 0);
                 if (currentDeep >= MAX_DEEP_IN_POWERPLAY) {
-                    return prev; // Can't add more deep fielders
+                    return prev;
                 }
             }
 

@@ -246,6 +246,7 @@ export default function ReplayPage() {
                     <div className="lg:col-span-2">
                         {showDecision && currentBall ? (
                             <BallDecisionCard
+                                key={`ball-${currentBallIndex}-${getMatchPhase()}`}
                                 ball={{
                                     ...currentBall,
                                     over: over,
