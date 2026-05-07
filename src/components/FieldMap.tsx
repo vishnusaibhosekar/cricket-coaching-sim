@@ -13,35 +13,39 @@ interface FieldMapProps {
     showActualZone?: FieldPosition;
 }
 
-// Field zones mapped to cricket positions (26 zones total) - x-axis inverted, y-axis corrected
-// Off side (batsman's right) is on RIGHT in SVG, Leg side (batsman's left) is on LEFT in SVG
-// Behind batsman (towards non-striker's end) = TOP of SVG (y < 100)
+// Field zones - pitch center at (100, 100) in SVG
+// Batsman at (100, 72) facing bowler at (100, 132)
+// Positive X = Leg side (RIGHT in SVG)
+// Negative X = Off side (LEFT in SVG)  
+// "In front" of batsman = toward bowler = positive Y offset
+// "Behind" batsman = toward keeper/slips = negative Y offset
 const FIELD_ZONES: { id: FieldPosition; label: string; x: number; y: number; region: 'inner' | 'deep' }[] = [
+    // Inner circle positions (30-yard circle)
+    { id: 'point', label: 'Point', x: -40, y: -5, region: 'inner' },
+    { id: 'backward_point', label: 'Backward Point', x: -35, y: -18, region: 'inner' },
+    { id: 'cover', label: 'Cover', x: -35, y: 10, region: 'inner' },
+    { id: 'extra_cover', label: 'Extra Cover', x: -25, y: 20, region: 'inner' },
+    { id: 'mid_off', label: 'Mid-Off', x: -15, y: 30, region: 'inner' },
+    { id: 'mid_on', label: 'Mid-On', x: 15, y: 30, region: 'inner' },
+    { id: 'midwicket', label: 'Midwicket', x: 25, y: 20, region: 'inner' },
+    { id: 'square_leg', label: 'Square Leg', x: 40, y: -5, region: 'inner' },
+    { id: 'short_fine_leg', label: 'Short Fine Leg', x: 30, y: -20, region: 'inner' },
+    { id: 'short_leg', label: 'Short Leg', x: 12, y: -8, region: 'inner' },
+    { id: 'short_third_man', label: 'Short 3rd Man', x: -30, y: -35, region: 'inner' },
 
-    // Inner circle positions - x-axis inverted, y-axis corrected
-    { id: 'third_man', label: 'Third Man', x: 156, y: 40, region: 'inner' },
-    { id: 'fine_leg', label: 'Fine Leg', x: 156, y: 156, region: 'inner' },
-    { id: 'short_fine_leg', label: 'Short Fine Leg', x: 136, y: 76, region: 'inner' },
-    { id: 'square_leg', label: 'Square Leg', x: 144, y: 100, region: 'inner' },
-    { id: 'midwicket', label: 'Midwicket', x: 76, y: 44, region: 'inner' },
-    { id: 'mid_on', label: 'Mid-On', x: 110, y: 156, region: 'inner' },
-    { id: 'mid_off', label: 'Mid-Off', x: 90, y: 156, region: 'inner' },
-    { id: 'extra_cover', label: 'Extra Cover', x: 74, y: 144, region: 'inner' },
-    { id: 'cover', label: 'Cover', x: 60, y: 124, region: 'inner' },
-    { id: 'backward_point', label: 'Backward Point', x: 150, y: 80, region: 'inner' },
-    { id: 'point', label: 'Point', x: 144, y: 100, region: 'inner' },
 
-    // Deep positions - x-axis inverted, y-axis corrected
-    { id: 'deep_third_man', label: 'Deep 3rd Man', x: 24, y: 10, region: 'deep' },
-    { id: 'long_leg', label: 'Long Leg', x: 30, y: 60, region: 'deep' },
-    { id: 'deep_square_leg', label: 'Deep Sq Leg', x: 24, y: 100, region: 'deep' },
-    { id: 'deep_midwicket', label: 'Deep Midwicket', x: 60, y: 170, region: 'deep' },
-    { id: 'long_on', label: 'Long On', x: 90, y: 190, region: 'deep' },
-    { id: 'long_off', label: 'Long Off', x: 110, y: 190, region: 'deep' },
-    { id: 'deep_extra_cover', label: 'Deep Extra Cover', x: 140, y: 170, region: 'deep' },
-    { id: 'deep_cover', label: 'Deep Cover', x: 164, y: 140, region: 'deep' },
-    { id: 'deep_backward_point', label: 'Deep Bwd Point', x: 170, y: 70, region: 'deep' },
-    { id: 'deep_point', label: 'Deep Point', x: 176, y: 100, region: 'deep' },
+    // Deep positions (boundary)
+    { id: 'deep_point', label: 'Deep Point', x: -75, y: -5, region: 'deep' },
+    { id: 'deep_backward_point', label: 'Deep Bwd Point', x: -65, y: -30, region: 'deep' },
+    { id: 'deep_cover', label: 'Deep Cover', x: -65, y: 25, region: 'deep' },
+    { id: 'deep_extra_cover', label: 'Deep Extra Cover', x: -50, y: 50, region: 'deep' },
+    { id: 'long_off', label: 'Long Off', x: -25, y: 70, region: 'deep' },
+    { id: 'long_on', label: 'Long On', x: 25, y: 70, region: 'deep' },
+    { id: 'deep_midwicket', label: 'Deep Midwicket', x: 50, y: 50, region: 'deep' },
+    { id: 'deep_square_leg', label: 'Deep Sq Leg', x: 75, y: -5, region: 'deep' },
+    { id: 'long_leg', label: 'Long Leg', x: 65, y: -30, region: 'deep' },
+    { id: 'fine_leg', label: 'Fine Leg', x: 55, y: -55, region: 'deep' },
+    { id: 'third_man', label: 'Third Man', x: -55, y: -60, region: 'deep' },
 ];
 
 export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActualZone }: FieldMapProps) {
@@ -138,17 +142,20 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
                         <rect x="-1" y="-1" width="2" height="3" fill="#a1a1aa" rx="0.5" />
                     </g>
 
-                    {/* Field zones */}
+                    {/* Field zones - rendered at center with relative coordinates */}
                     {FIELD_ZONES.map((zone) => {
                         const hasFielder = (fielders[zone.id] || 0) > 0;
                         const isActualZone = zone.id === showActualZone;
+                        // Convert relative coords to SVG coords: center at (100,100), scale by 1.0
+                        const svgX = 100 + zone.x;
+                        const svgY = 100 + zone.y;
 
                         return (
                             <g key={zone.id}>
                                 {/* Zone circle */}
                                 <circle
-                                    cx={zone.x}
-                                    cy={zone.y}
+                                    cx={svgX}
+                                    cy={svgY}
                                     r={zone.region === 'deep' ? 4 : 3.5}
                                     fill={
                                         isActualZone
@@ -166,8 +173,8 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
                                 {/* Fielder count */}
                                 {hasFielder && (
                                     <text
-                                        x={zone.x}
-                                        y={zone.y + 1}
+                                        x={svgX}
+                                        y={svgY + 1}
                                         textAnchor="middle"
                                         dominantBaseline="middle"
                                         fill="white"
@@ -180,8 +187,8 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
 
                                 {/* Zone label */}
                                 <text
-                                    x={zone.x}
-                                    y={zone.y + (zone.region === 'deep' ? 7 : 6)}
+                                    x={svgX}
+                                    y={svgY + (zone.region === 'deep' ? 7 : 6)}
                                     textAnchor="middle"
                                     fill="#a1a1aa"
                                     fontSize="2.5"
@@ -193,20 +200,25 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
                     })}
 
                     {/* Actual shot zone highlight */}
-                    {showActualZone && (
-                        <g>
-                            <circle
-                                cx={FIELD_ZONES.find(z => z.id === showActualZone)?.x || 50}
-                                cy={FIELD_ZONES.find(z => z.id === showActualZone)?.y || 50}
-                                r="6"
-                                fill="none"
-                                stroke="#ef4444"
-                                strokeWidth="1"
-                                strokeDasharray="2,1"
-                                className="animate-pulse"
-                            />
-                        </g>
-                    )}
+                    {showActualZone && (() => {
+                        const actualZone = FIELD_ZONES.find(z => z.id === showActualZone);
+                        const ax = actualZone ? 100 + actualZone.x : 50;
+                        const ay = actualZone ? 100 + actualZone.y : 50;
+                        return (
+                            <g>
+                                <circle
+                                    cx={ax}
+                                    cy={ay}
+                                    r="6"
+                                    fill="none"
+                                    stroke="#ef4444"
+                                    strokeWidth="1"
+                                    strokeDasharray="2,1"
+                                    className="animate-pulse"
+                                />
+                            </g>
+                        );
+                    })()}
                 </svg>
             </div>
 
@@ -230,7 +242,7 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
             <Button
                 onClick={handleSubmit}
                 disabled={!isComplete || disabled}
-                className="w-full"
+                className="w-full bg-green-600 hover:bg-green-700 disabled:bg-zinc-700"
                 size="lg"
             >
                 {!isComplete

@@ -137,7 +137,7 @@ export type FieldPosition =
     // Inner circle positions
     | 'point' | 'backward_point' | 'cover' | 'extra_cover'
     | 'mid_off' | 'mid_on' | 'midwicket' | 'square_leg'
-    | 'short_fine_leg' | 'fine_leg' | 'third_man'
+    | 'short_fine_leg' | 'fine_leg' | 'third_man' | 'short_third_man'
     // Deep positions
     | 'deep_cover' | 'deep_extra_cover' | 'deep_point' | 'deep_backward_point'
     | 'deep_midwicket' | 'deep_square_leg' | 'long_on' | 'long_off'
