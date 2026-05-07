@@ -19,13 +19,13 @@ interface FieldMapProps {
 const FIELD_ZONES: { id: FieldPosition; label: string; x: number; y: number; region: 'inner' | 'deep' }[] = [
 
     // Inner circle positions - x-axis inverted, y-axis corrected
-    { id: 'third_man', label: 'Third Man', x: 44, y: 40, region: 'inner' },
-    { id: 'fine_leg', label: 'Fine Leg', x: 44, y: 156, region: 'inner' },
-    { id: 'short_fine_leg', label: 'Short Fine Leg', x: 64, y: 76, region: 'inner' },
-    { id: 'square_leg', label: 'Square Leg', x: 56, y: 100, region: 'inner' },
+    { id: 'third_man', label: 'Third Man', x: 156, y: 40, region: 'inner' },
+    { id: 'fine_leg', label: 'Fine Leg', x: 156, y: 156, region: 'inner' },
+    { id: 'short_fine_leg', label: 'Short Fine Leg', x: 136, y: 76, region: 'inner' },
+    { id: 'square_leg', label: 'Square Leg', x: 144, y: 100, region: 'inner' },
     { id: 'midwicket', label: 'Midwicket', x: 76, y: 44, region: 'inner' },
-    { id: 'mid_on', label: 'Mid-On', x: 90, y: 156, region: 'inner' },
-    { id: 'mid_off', label: 'Mid-Off', x: 110, y: 156, region: 'inner' },
+    { id: 'mid_on', label: 'Mid-On', x: 110, y: 156, region: 'inner' },
+    { id: 'mid_off', label: 'Mid-Off', x: 90, y: 156, region: 'inner' },
     { id: 'extra_cover', label: 'Extra Cover', x: 74, y: 144, region: 'inner' },
     { id: 'cover', label: 'Cover', x: 60, y: 124, region: 'inner' },
     { id: 'backward_point', label: 'Backward Point', x: 150, y: 80, region: 'inner' },
@@ -117,24 +117,24 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
                     {/* Pitch */}
                     <rect
                         x="98"
-                        y="55"
+                        y="72"
                         width="4"
-                        height="90"
+                        height="60"
                         fill="#d4d4d8"
                         stroke="#a1a1aa"
                         strokeWidth="0.5"
                     />
 
                     {/* Batsman at striker's end */}
-                    <g transform="translate(100, 55)">
+                    <g transform="translate(100, 72)">
                         <circle cx="0" cy="-3" r="2.5" fill="#fbbf24" />
                         <rect x="-1.5" y="-1.5" width="3" height="4" fill="#fbbf24" rx="0.8" />
-                        <line x1="0" y1="0" x2="4" y2="4" stroke="#fbbf24" strokeWidth="1" />
+                        <line x1="0" y1="0" x2="-4" y2="4" stroke="#fbbf24" strokeWidth="1" />
                     </g>
 
                     {/* Bowler at bowler's end */}
-                    <g transform="translate(100, 145)">
-                        <circle cx="0" cy="-1.5" r="2" fill="#a1a1aa" />
+                    <g transform="translate(100, 132)">
+                        <circle cx="0" cy="-1.5" r="2" fill="#9f0000ff" />
                         <rect x="-1" y="-1" width="2" height="3" fill="#a1a1aa" rx="0.5" />
                     </g>
 
