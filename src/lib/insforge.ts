@@ -7,7 +7,7 @@ if (!INSFORGE_URL) {
     console.warn('NEXT_PUBLIC_INSFORGE_URL is not configured');
 }
 
-// Initialize InsForge client
+// Initialize InsForge client (browser mode)
 export const insforge = INSFORGE_URL
     ? createClient({
         baseUrl: INSFORGE_URL,
@@ -202,10 +202,13 @@ export async function updateUserProfileStats(
     meritScore: number
 ): Promise<void> {
     if (!insforge || !userId) {
+        console.warn('updateUserProfileStats: Missing insforge or userId');
         return;
     }
 
     try {
+        console.log('Updating profile stats for user:', userId, 'with score:', meritScore);
+
         // Get current profile
         const { data: profile } = await insforge.database
             .from('user_profiles')
@@ -214,9 +217,29 @@ export async function updateUserProfileStats(
             .maybeSingle();
 
         if (!profile) {
-            console.warn('No profile found for user:', userId);
+            console.warn('No profile found for user:', userId, '- creating one');
+            // Create profile with initial stats
+            await insforge.database
+                .from('user_profiles')
+                .insert([{
+                    id: userId,
+                    display_name: 'Player',
+                    avatar_url: '',
+                    total_points: meritScore,
+                    total_decisions: 1,
+                    avg_score: meritScore,
+                    best_score: meritScore,
+                }]);
+            console.log('Profile created with initial stats');
             return;
         }
+
+        console.log('Existing profile found:', {
+            currentPoints: profile.total_points,
+            currentDecisions: profile.total_decisions,
+            currentAvg: profile.avg_score,
+            currentBest: profile.best_score,
+        });
 
         // Calculate new stats
         const newTotalDecisions = profile.total_decisions + 1;
@@ -224,8 +247,15 @@ export async function updateUserProfileStats(
         const newAvgScore = newTotalPoints / newTotalDecisions;
         const newBestScore = Math.max(profile.best_score, meritScore);
 
+        console.log('New stats will be:', {
+            newTotalDecisions,
+            newTotalPoints,
+            newAvgScore,
+            newBestScore,
+        });
+
         // Update profile
-        await insforge.database
+        const { error: updateError } = await insforge.database
             .from('user_profiles')
             .update({
                 total_decisions: newTotalDecisions,
@@ -235,12 +265,11 @@ export async function updateUserProfileStats(
             })
             .eq('id', userId);
 
-        console.log('User profile updated for:', userId, {
-            totalDecisions: newTotalDecisions,
-            totalPoints: newTotalPoints,
-            avgScore: newAvgScore,
-            bestScore: newBestScore,
-        });
+        if (updateError) {
+            console.error('Failed to update profile:', updateError);
+        } else {
+            console.log('User profile updated successfully');
+        }
     } catch (error) {
         console.error('Error updating user profile stats:', error);
     }

@@ -1,22 +1,57 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { mockGeminiScore } from '@/lib/mock-data';
+import { insforge, updateUserProfileStats } from '@/lib/insforge';
 
-// Stage 3: Mock Gemini scoring endpoint
+// Score a decision and update user profile stats
 export async function POST(request: NextRequest) {
     try {
-        const { decision, matchContext } = await request.json();
+        const { decisionId, meritScore, meritBreakdown } = await request.json();
 
-        // Simulate Gemini API delay (2 seconds)
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        if (!insforge) {
+            return NextResponse.json(
+                { error: 'InsForge client not initialized' },
+                { status: 500 }
+            );
+        }
 
-        console.log('Scoring decision:', decision);
-        console.log('Match context:', matchContext);
+        // Update decision with score
+        const { error: updateError } = await insforge.database
+            .from('decisions')
+            .update({
+                merit_score: meritScore,
+                merit_breakdown: meritBreakdown,
+            })
+            .eq('id', decisionId);
 
-        // Return mock Gemini score
-        return NextResponse.json(mockGeminiScore);
-    } catch (error) {
+        if (updateError) {
+            console.error('Failed to update decision score:', updateError);
+            return NextResponse.json(
+                { error: updateError.message },
+                { status: 500 }
+            );
+        }
+
+        // Get the decision to find user_id
+        const { data: decision } = await insforge.database
+            .from('decisions')
+            .select('user_id')
+            .eq('id', decisionId)
+            .single();
+
+        if (decision?.user_id) {
+            // Update user profile stats
+            await updateUserProfileStats(decision.user_id, meritScore);
+        }
+
+        console.log('Decision scored:', decisionId, 'Score:', meritScore);
+
+        return NextResponse.json({
+            success: true,
+            message: 'Score saved successfully'
+        });
+    } catch (error: any) {
+        console.error('Scoring error:', error);
         return NextResponse.json(
-            { error: 'Failed to score decision' },
+            { error: error.message || 'Failed to score decision' },
             { status: 500 }
         );
     }

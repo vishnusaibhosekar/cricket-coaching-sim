@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { insforge } from '@/lib/insforge';
+import { updateUserProfileStats, insforge } from '@/lib/insforge';
 
 // Submit a decision and update user profile stats
 export async function POST(request: NextRequest) {
@@ -13,17 +13,19 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // Get current user
-        const { data: userData, error: userError } = await insforge.auth.getCurrentUser();
-
-        if (userError || !userData?.user) {
+        // Extract user_id from decision data
+        const userId = decision.user_id;
+        if (!userId) {
             return NextResponse.json(
-                { error: 'Authentication required' },
-                { status: 401 }
+                { error: 'user_id is required' },
+                { status: 400 }
             );
         }
 
-        const userId = userData.user.id;
+        // Remove user_id from decision to avoid duplicate column
+        delete decision.user_id;
+
+        console.log('Submitting decision for user:', userId);
 
         // Add user_id to decision
         const decisionWithUser = {
@@ -47,6 +49,12 @@ export async function POST(request: NextRequest) {
         }
 
         console.log('Decision submitted:', decisionData);
+
+        // If merit_score is provided, update user profile stats immediately
+        if (decision.merit_score !== undefined && decision.merit_score !== null) {
+            await updateUserProfileStats(userId, decision.merit_score);
+            console.log('User profile stats updated with score:', decision.merit_score);
+        }
 
         return NextResponse.json({
             success: true,

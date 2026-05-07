@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Trophy, Target, BarChart3 } from 'lucide-react';
 import type { MatchState, BallDecision, CumulativeScore as CumulativeScoreType } from '@/lib/types';
 import { calculateCumulativeScore } from '@/lib/field-scoring';
+import { insforge } from '@/lib/insforge';
 
 interface CommentaryEntry {
     ball: string;
@@ -38,6 +39,18 @@ export default function ReplayPage() {
     const [replayComplete, setReplayComplete] = useState(false);
     const [ballDecisions, setBallDecisions] = useState<BallDecision[]>([]);
     const [cumulativeScore, setCumulativeScore] = useState<CumulativeScoreType | null>(null);
+
+    const handleSignOut = async () => {
+        try {
+            if (insforge) {
+                await insforge.auth.signOut();
+                router.push('/');
+            }
+        } catch (error) {
+            console.error('Sign out error:', error);
+            router.push('/');
+        }
+    };
 
     // Get current ball data
     const currentBall = currentBallIndex >= 0 ? allBalls[currentBallIndex] : null;
@@ -87,7 +100,7 @@ export default function ReplayPage() {
     }, [isPlaying, playbackSpeed, nextBall]);
 
     // Handle decision submission
-    const handleDecisionSubmit = (decision: BallDecision) => {
+    const handleDecisionSubmit = async (decision: BallDecision) => {
         const newDecisions = [...ballDecisions, decision];
         setBallDecisions(newDecisions);
 
@@ -97,6 +110,55 @@ export default function ReplayPage() {
 
         console.log('Decision scored:', decision.score);
         console.log('Cumulative:', updatedCumulative);
+
+        // Save decision to database
+        try {
+            const currentBall = allBalls[currentBallIndex];
+            // Parse over number from ball string (e.g., "3.4" -> 3)
+            const overNumber = parseInt(currentBall.ball.split('.')[0]);
+
+            // Get current user from browser SDK
+            let userId = null;
+            if (insforge) {
+                const { data } = await insforge.auth.getCurrentUser();
+                userId = data?.user?.id || null;
+            }
+
+            const decisionData = {
+                match_id: process.env.NEXT_PUBLIC_MATCH_ID || 'srh-vs-pbks-2026-05-06',
+                over_number: overNumber,
+                decision_type: 'field_placement' as const,
+                user_choice: decision.user_placement,
+                actual_choice: { zones: { [currentBall.shot_zone]: 1 } }, // What actually happened
+                match_context: {
+                    score: mockMatchState ? `${mockMatchState.team1.name} ${mockMatchState.team1.score}/${mockMatchState.team1.wickets}` : '',
+                    overs: overNumber,
+                    batsmen: mockMatchState?.currentBatsmen || [],
+                    phase: mockMatchState?.matchPhase || 'middle',
+                    runRate: mockMatchState?.currentRunRate || 0,
+                },
+                merit_score: decision.score,
+                merit_breakdown: decision.score_breakdown,
+                user_id: userId, // Include user ID for server-side processing
+            };
+
+            const response = await fetch('/api/decision/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify(decisionData),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('Decision saved to database:', result.decisionId);
+            } else {
+                const errorData = await response.json();
+                console.error('Failed to save decision:', errorData);
+            }
+        } catch (error) {
+            console.error('Failed to save decision:', error);
+        }
     };
 
     // Controls handlers
@@ -193,11 +255,18 @@ export default function ReplayPage() {
                         )}
                         <Button
                             variant="outline"
-                            onClick={() => router.push('/game/leaderboard')}
+                            onClick={() => router.push('/leaderboard')}
                             className="bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700"
                         >
                             <BarChart3 className="h-4 w-4 mr-2" />
                             Leaderboard
+                        </Button>
+                        <Button
+                            onClick={handleSignOut}
+                            variant="outline"
+                            className="bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700"
+                        >
+                            Sign Out
                         </Button>
                         <Badge className="text-lg bg-purple-600">
                             <Trophy className="h-4 w-4 mr-2" />

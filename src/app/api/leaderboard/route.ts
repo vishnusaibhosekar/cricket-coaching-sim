@@ -26,6 +26,7 @@ export async function GET() {
             );
         }
 
+        console.log('Leaderboard data:', data);
         return NextResponse.json(data || []);
     } catch (error: any) {
         console.error('Leaderboard API error:', error);
