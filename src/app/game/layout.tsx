@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { insforge } from '@/lib/insforge';
+import { Button } from '@/components/ui/button';
 
 export default function GameLayout({
     children,
@@ -20,15 +21,15 @@ export default function GameLayout({
                     router.push('/');
                     return;
                 }
-                const { data } = await insforge.auth.getCurrentUser();
-                if (!data) {
-                    router.push('/');
+                const { data, error } = await insforge.auth.getCurrentUser();
+                if (error || !data?.user) {
+                    router.push('/auth/signin');
                 } else {
-                    setUser(data);
+                    setUser(data.user);
                 }
             } catch (error) {
                 console.error('Auth check failed:', error);
-                router.push('/');
+                router.push('/auth/signin');
             } finally {
                 setLoading(false);
             }
@@ -36,6 +37,20 @@ export default function GameLayout({
 
         checkAuth();
     }, [router]);
+
+    const handleSignOut = async () => {
+        try {
+            if (!insforge) {
+                router.push('/');
+                return;
+            }
+            await insforge.auth.signOut();
+            router.push('/');
+        } catch (error) {
+            console.error('Sign out error:', error);
+            router.push('/');
+        }
+    };
 
     if (loading) {
         return (
@@ -52,10 +67,31 @@ export default function GameLayout({
                     <h1 className="text-xl font-bold text-white">🏏 Cricket Coaching Simulator</h1>
                     <div className="flex items-center gap-4">
                         {user && (
-                            <span className="text-zinc-300">
-                                Welcome, {user.display_name || user.email}
-                            </span>
+                            <div className="flex items-center gap-3">
+                                {user.avatar_url || user.picture ? (
+                                    <img
+                                        src={user.avatar_url || user.picture}
+                                        alt={user.display_name || user.name || user.email}
+                                        className="w-8 h-8 rounded-full border border-zinc-700"
+                                    />
+                                ) : (
+                                    <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-bold">
+                                        {(user.display_name || user.name || user.email || 'U')[0].toUpperCase()}
+                                    </div>
+                                )}
+                                <span className="text-zinc-300 text-sm">
+                                    {user.display_name || user.name || user.email}
+                                </span>
+                            </div>
                         )}
+                        <Button
+                            onClick={handleSignOut}
+                            variant="outline"
+                            size="sm"
+                            className="text-sm text-zinc-500 text-center mt-3"
+                        >
+                            Sign Out
+                        </Button>
                     </div>
                 </div>
             </nav>

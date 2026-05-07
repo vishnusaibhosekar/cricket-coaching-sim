@@ -1,22 +1,62 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { insforge } from '@/lib/insforge';
 
-// Stage 3: Mock decision submission endpoint
+// Submit a decision and update user profile stats
 export async function POST(request: NextRequest) {
     try {
         const decision = await request.json();
 
-        console.log('Decision submitted:', decision);
+        if (!insforge) {
+            return NextResponse.json(
+                { error: 'InsForge client not initialized' },
+                { status: 500 }
+            );
+        }
 
-        // In production, this would store in InsForge database
-        // For now, just return success
+        // Get current user
+        const { data: userData, error: userError } = await insforge.auth.getCurrentUser();
+
+        if (userError || !userData?.user) {
+            return NextResponse.json(
+                { error: 'Authentication required' },
+                { status: 401 }
+            );
+        }
+
+        const userId = userData.user.id;
+
+        // Add user_id to decision
+        const decisionWithUser = {
+            ...decision,
+            user_id: userId,
+        };
+
+        // Insert decision into database
+        const { data: decisionData, error: decisionError } = await insforge.database
+            .from('decisions')
+            .insert([decisionWithUser])
+            .select()
+            .single();
+
+        if (decisionError) {
+            console.error('Decision insert error:', decisionError);
+            return NextResponse.json(
+                { error: decisionError.message },
+                { status: 500 }
+            );
+        }
+
+        console.log('Decision submitted:', decisionData);
+
         return NextResponse.json({
             success: true,
-            decisionId: 'mock-id-' + Date.now(),
+            decisionId: decisionData.id,
             message: 'Decision submitted successfully'
         });
-    } catch (error) {
+    } catch (error: any) {
+        console.error('Decision submission error:', error);
         return NextResponse.json(
-            { error: 'Failed to submit decision' },
+            { error: error.message || 'Failed to submit decision' },
             { status: 500 }
         );
     }

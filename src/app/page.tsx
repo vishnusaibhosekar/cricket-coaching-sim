@@ -8,7 +8,7 @@ export default function Home() {
   const router = useRouter();
 
   const handleStartPlaying = () => {
-    router.push('/replay');
+    router.push('/auth/signin');
   };
 
   return (
@@ -31,8 +31,11 @@ export default function Home() {
             size="lg"
             className="w-full text-lg py-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
           >
-            🏏 Start Playing — Field Placement Challenge
+            🏏 Sign In to Play — Field Placement Challenge
           </Button>
+          <p className="text-sm text-zinc-500 text-center mt-3">
+            Sign in with Google to track your progress and compete on the leaderboard
+          </p>
         </div>
 
         {/* How It Works Section */}

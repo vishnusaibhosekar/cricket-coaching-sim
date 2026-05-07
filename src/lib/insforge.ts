@@ -11,6 +11,7 @@ if (!INSFORGE_URL) {
 export const insforge = INSFORGE_URL
     ? createClient({
         baseUrl: INSFORGE_URL,
+        anonKey: process.env.NEXT_PUBLIC_INSFORGE_ANON_KEY,
     })
     : null;
 
@@ -148,5 +149,99 @@ export async function getUserSession() {
     } catch (error) {
         console.error('Error getting user session:', error);
         return null;
+    }
+}
+
+// Sync user profile after OAuth sign-in
+export async function syncUserProfile(user: any): Promise<void> {
+    if (!insforge || !user) {
+        return;
+    }
+
+    try {
+        const userId = user.id || user.user?.id;
+        if (!userId) {
+            console.warn('No user ID found for profile sync');
+            return;
+        }
+
+        // Check if profile already exists
+        const { data: existingProfile } = await insforge.database
+            .from('user_profiles')
+            .select('id')
+            .eq('id', userId)
+            .maybeSingle();
+
+        // If profile doesn't exist, create it
+        if (!existingProfile) {
+            const displayName = user.name || user.display_name || user.email || 'Anonymous';
+            const avatarUrl = user.avatar_url || user.picture || '';
+
+            await insforge.database
+                .from('user_profiles')
+                .insert([{
+                    id: userId,
+                    display_name: displayName,
+                    avatar_url: avatarUrl,
+                    total_points: 0,
+                    total_decisions: 0,
+                    avg_score: 0,
+                    best_score: 0,
+                }]);
+
+            console.log('User profile created for:', userId);
+        }
+    } catch (error) {
+        console.error('Error syncing user profile:', error);
+    }
+}
+
+// Update user profile stats after scoring a decision
+export async function updateUserProfileStats(
+    userId: string,
+    meritScore: number
+): Promise<void> {
+    if (!insforge || !userId) {
+        return;
+    }
+
+    try {
+        // Get current profile
+        const { data: profile } = await insforge.database
+            .from('user_profiles')
+            .select('*')
+            .eq('id', userId)
+            .maybeSingle();
+
+        if (!profile) {
+            console.warn('No profile found for user:', userId);
+            return;
+        }
+
+        // Calculate new stats
+        const newTotalDecisions = profile.total_decisions + 1;
+        const newTotalPoints = profile.total_points + meritScore;
+        const newAvgScore = newTotalPoints / newTotalDecisions;
+        const newBestScore = Math.max(profile.best_score, meritScore);
+
+        // Update profile
+        await insforge.database
+            .from('user_profiles')
+            .update({
+                total_decisions: newTotalDecisions,
+                total_points: newTotalPoints,
+                avg_score: newAvgScore,
+                best_score: newBestScore,
+            })
+            .eq('id', userId);
+
+        console.log('User profile updated for:', userId, {
+            totalDecisions: newTotalDecisions,
+            totalPoints: newTotalPoints,
+            avgScore: newAvgScore,
+            bestScore: newBestScore,
+        });
+    } catch (error) {
+        console.error('Error updating user profile stats:', error);
     }
 }
