@@ -1,4 +1,5 @@
 import parsedInnings from '../../PBKS_Innings/parsed-innings.json';
+import { ShotZone } from './types';
 
 export interface BallData {
     ball: string;
@@ -12,6 +13,8 @@ export interface BallData {
         fielder: string;
         batsman_out: string;
     } | null;
+    shot_type: string;
+    shot_zone: ShotZone;
     commentary: string;
 }
 
@@ -33,7 +36,8 @@ export interface ParsedInnings {
 }
 
 // Type assertion for the imported JSON
-const inningsData = parsedInnings as ParsedInnings;
+// Note: shot_type and shot_zone will be added after re-running the parser with enhanced prompt
+const inningsData = parsedInnings as any as ParsedInnings;
 
 // Tactical moments - overs with wickets or high scoring (>15 runs)
 export const tacticalMoments = inningsData.overs.filter(

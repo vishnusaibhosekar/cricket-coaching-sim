@@ -30,7 +30,7 @@ const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
  * Build the parsing prompt for each over
  */
 function buildParsingPrompt(overNumber, overContent) {
-    return `Parse this cricket over commentary into structured JSON.
+    return `Parse this cricket over commentary into structured JSON with shot placement zones.
 
 Return ONLY valid JSON with this structure:
 {
@@ -45,6 +45,8 @@ Return ONLY valid JSON with this structure:
       "is_wicket": false,
       "extras": null,
       "wicket": null,
+      "shot_type": "drive",
+      "shot_zone": "cover",
       "commentary": "short description"
     }
   ],
@@ -52,11 +54,54 @@ Return ONLY valid JSON with this structure:
   "wickets": 0
 }
 
+CRITICAL: Extract shot_zone from commentary based on where the ball was played:
+
+SHOT ZONES (use exactly these values):
+- slip_gully: Edges, catches behind, guiding shots
+- point: Cuts, square cuts, punches through point
+- cover: Drives through cover, straight drives, punches
+- mid_off: Straight drives, pushes to mid-off region
+- mid_on: Flicks to mid-on, pushes down the ground
+- midwicket: Pulls, flicks through midwicket
+- square_leg: Pulls, hooks, sweeps to square leg
+- fine_leg: Hooks, pulls fine, deflections to fine leg
+- third_man: Edges, glances, cuts to third man
+- deep_cover: Lofted drives, big hits through cover
+- deep_midwicket: Big pulls, lofted shots over midwicket
+- long_on: Lofted straight drives, big hits down the ground
+- long_off: Lofted drives over long-off
+- deep_square_leg: Big pulls/sweeps to deep square leg
+- deep_point: Cuts/power hits through deep point
+- deep_third_man: Edges/cuts running away to third man
+- boundary_rope: Shots that reach the boundary (specify direction if mentioned)
+- no_shot: Defensive plays, dots, misses, no shot attempted
+
+SHOT TYPE GUIDANCE:
+- drive: Full ball, bat face straight, along ground
+- pull: Short ball, horizontal bat swing, midwicket/square leg
+- hook: Very short ball, upper body shot, square leg/fine leg
+- cut: Wide/short ball, square of wicket, point region
+- flick: Wristy shot, midwicket/mid-on region
+- sweep: Low delivery, kneeling, square leg region
+- lofted_drive: Full ball, aerial shot over infield
+- edge: Unintended contact, usually slip/third man
+- defend: Forward/backward defensive, no runs
+
+Examples:
+- "cuts a short and wide delivery" → shot_type: "cut", shot_zone: "point"
+- "pulls to deep midwicket for six" → shot_type: "pull", shot_zone: "deep_midwicket"
+- "drives straight to mid-off" → shot_type: "drive", shot_zone: "mid_off"
+- "edges to slip" → shot_type: "edge", shot_zone: "slip_gully"
+- "defends solidly" → shot_type: "defend", shot_zone: "no_shot"
+- "hooked to fine leg" → shot_type: "hook", shot_zone: "fine_leg"
+
 Rules:
 - runs: number (0-6), or 0 for wickets
 - is_wicket: true/false
 - extras: "wide", "no_ball", or null
 - wicket: {"type": "caught", "fielder": "Name", "batsman_out": "Name"} or null
+- shot_type: infer from commentary (use guidance above)
+- shot_zone: MUST be one of the zones listed above (infer from commentary context)
 - commentary: keep it short (1 sentence max)
 - Escape all quotes properly
 - NO markdown, NO backticks, just raw JSON
@@ -125,6 +170,7 @@ async function parseOver(overNumber, overContent) {
         console.log(`     - Balls: ${parsedJSON.balls.length}`);
         console.log(`     - Runs: ${parsedJSON.total_runs}`);
         console.log(`     - Wickets: ${parsedJSON.wickets}`);
+        console.log(`     - Shot zones extracted: ${parsedJSON.balls.filter(b => b.shot_zone).length}`);
 
         return parsedJSON;
     } catch (error) {

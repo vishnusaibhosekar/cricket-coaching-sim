@@ -28,8 +28,8 @@ export interface TacticalMoment {
 
 export const tacticalMomentsDB: TacticalMoment[] = [
     {
-        over: 1,
-        ball: '3',
+        over: 0,
+        ball: '6',
         situation: 'wicket',
         context: {
             score: '8-1',

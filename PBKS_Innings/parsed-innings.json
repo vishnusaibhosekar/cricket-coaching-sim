@@ -7,7 +7,7 @@
   "overs": [
     {
       "over": 1,
-      "score_at_start": "4-1",
+      "score_at_start": "0-0",
       "balls": [
         {
           "ball": "0.1",
@@ -17,7 +17,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Priyansh Arya guides a good length delivery for a single."
+          "shot_type": "cut",
+          "shot_zone": "deep_point",
+          "commentary": "Arya opens the face and guides a good length delivery to deep backward point."
         },
         {
           "ball": "0.2",
@@ -27,7 +29,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Prabhsimran Singh punches a back of a length ball for two runs due to a fumble."
+          "shot_type": "drive",
+          "shot_zone": "deep_point",
+          "commentary": "Singh stands tall and punches a back of a length delivery to deep backward point."
         },
         {
           "ball": "0.3",
@@ -37,7 +41,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Prabhsimran Singh defends a back of a length delivery on middle."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Singh stays back and defends a back of a length delivery watchfully."
         },
         {
           "ball": "0.4",
@@ -47,7 +53,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Prabhsimran Singh cuts a short and wide delivery for a single."
+          "shot_type": "cut",
+          "shot_zone": "deep_point",
+          "commentary": "Singh cuts a short and wide delivery to deep backward point for a single."
         },
         {
           "ball": "0.5",
@@ -57,7 +65,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Priyansh Arya misses a short, fast delivery from Pat Cummins."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Arya flashes hard at a short ball that kicked off the deck and misses."
         },
         {
           "ball": "0.6",
@@ -71,14 +81,16 @@
             "fielder": "Eshan Malinga",
             "batsman_out": "Priyansh Arya"
           },
-          "commentary": "Priyansh Arya caught by Eshan Malinga off Pat Cummins, attempting a hook shot."
+          "shot_type": "hook",
+          "shot_zone": "deep_square_leg",
+          "commentary": "Arya goes for the hook, hits it in the air towards deep square leg and is caught by Malinga."
         }
       ],
       "total_runs": 4,
       "wickets": 1
     },
     {
-      "over": 1,
+      "over": 2,
       "score_at_start": "10-2",
       "balls": [
         {
@@ -93,7 +105,9 @@
             "fielder": "Pat Cummins",
             "batsman_out": "Prabhsimran Singh"
           },
-          "commentary": "Prabhsimran Singh is caught by Pat Cummins off Nitish Reddy."
+          "shot_type": "lofted_drive",
+          "shot_zone": "cover",
+          "commentary": "Prabhsimran Singh goes for a lofted drive, leading edge caught by Pat Cummins at cover."
         },
         {
           "ball": "1.2",
@@ -103,7 +117,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Shreyas Iyer hits a four off a short and wide delivery."
+          "shot_type": "cut",
+          "shot_zone": "deep_cover",
+          "commentary": "Shreyas Iyer slaps a short and wide delivery to sweeper cover for four."
         },
         {
           "ball": "1.3",
@@ -113,7 +129,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Shreyas Iyer defends a good length delivery."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Shreyas Iyer defends a good length delivery to the off side."
         },
         {
           "ball": "1.4",
@@ -123,7 +141,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Shreyas Iyer taps a back of a length delivery for a single."
+          "shot_type": "defend",
+          "shot_zone": "point",
+          "commentary": "Shreyas Iyer taps a back of a length delivery to backward point for a single."
         },
         {
           "ball": "1.5",
@@ -133,7 +153,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly flashes hard and misses a probing length delivery."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Cooper Connolly flashes hard at a back of a length delivery and misses."
         },
         {
           "ball": "1.6",
@@ -143,7 +165,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly mistimes a drive for a single to mid-on."
+          "shot_type": "drive",
+          "shot_zone": "mid_on",
+          "commentary": "Cooper Connolly mistimes a drive to mid-on for a single."
         }
       ],
       "total_runs": 6,
@@ -154,74 +178,88 @@
       "score_at_start": "23-2",
       "balls": [
         {
-          "ball": "2.1",
+          "ball": "3.1",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 4,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Hint of width, Connolly latched onto it and slayed it square of the wicket for four."
+          "shot_type": "cut",
+          "shot_zone": "point",
+          "commentary": "Connolly slays a back of a length delivery square of the wicket for four."
         },
         {
-          "ball": "2.2",
+          "ball": "3.2",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 2,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Short delivery, Connolly punched it off the back foot square of the wicket for two runs."
+          "shot_type": "cut",
+          "shot_zone": "point",
+          "commentary": "Connolly punches a short ball off the back foot square of the wicket for two runs."
         },
         {
-          "ball": "2.3",
+          "ball": "3.3",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Probing line around off stump, Connolly punched it towards mid off."
+          "shot_type": "defend",
+          "shot_zone": "mid_off",
+          "commentary": "Connolly punches a probing delivery towards mid off for no run."
         },
         {
-          "ball": "2.4",
+          "ball": "3.4",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": "no_ball",
           "wicket": null,
-          "commentary": "Cummins bowled a slower short delivery, Connolly was beaten, and Cummins overstepped for a no ball."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Cummins bowls a no ball, a slower short delivery that beats Connolly."
         },
         {
-          "ball": "2.4",
+          "ball": "3.5",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 6,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Connolly made full use of the freehit, slicing a full delivery over deep point for six."
+          "shot_type": "lofted_drive",
+          "shot_zone": "deep_point",
+          "commentary": "Connolly slices a full delivery over deep point for a six on the freehit."
         },
         {
-          "ball": "2.5",
+          "ball": "3.6",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Back of a length delivery outside off, Connolly defended it to the off side."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Connolly defends a back of a length delivery to the off side."
         },
         {
-          "ball": "2.6",
+          "ball": "3.7",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Yorker length delivery on off, Connolly dug it out towards point."
+          "shot_type": "defend",
+          "shot_zone": "point",
+          "commentary": "Connolly digs out a yorker length delivery towards point."
         }
       ],
       "total_runs": 13,
@@ -239,7 +277,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Full and swinging into the pads, Iyer drives it towards mid on."
+          "shot_type": "drive",
+          "shot_zone": "mid_on",
+          "commentary": "Iyer drives a full delivery towards mid on."
         },
         {
           "ball": "3.2",
@@ -253,7 +293,9 @@
             "fielder": "Pat Cummins",
             "batsman_out": "Shreyas Iyer"
           },
-          "commentary": "Shreyas Iyer attempts to go inside out over cover but slices an off cutter to Pat Cummins at mid off."
+          "shot_type": "lofted_drive",
+          "shot_zone": "mid_off",
+          "commentary": "Shreyas Iyer attempts an inside-out lofted drive over cover but slices it to mid off, caught by Pat Cummins."
         },
         {
           "ball": "3.3",
@@ -263,7 +305,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Back of a length targeting the stumps, Stoinis defends it towards mid on."
+          "shot_type": "defend",
+          "shot_zone": "mid_on",
+          "commentary": "Stoinis defends a back of a length delivery towards mid on."
         },
         {
           "ball": "3.4",
@@ -273,7 +317,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Angling in from back of a length, Stoinis pushes it back to the bowler."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Stoinis pushes a back of a length delivery back to the bowler."
         },
         {
           "ball": "3.5",
@@ -283,7 +329,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Stoinis hits a full delivery over deep mid-wicket for a big six."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Stoinis heaves a full delivery over deep mid-wicket for a big six."
         },
         {
           "ball": "3.6",
@@ -293,7 +341,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Stoinis attempts a heave off a change of pace but fails to connect."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Stoinis attempts a heave but fails to connect with the change of pace delivery."
         }
       ],
       "total_runs": 6,
@@ -311,7 +361,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Connolly cuts a short ball to deep backward point for 1 run."
+          "shot_type": "cut",
+          "shot_zone": "deep_point",
+          "commentary": "Connolly cuts a short delivery outside off to deep backward point for one run."
         },
         {
           "ball": "4.2",
@@ -321,7 +373,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Stoinis defends a back of a length ball angling into the stumps."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Stoinis defends a back of a length delivery angling into the stumps."
         },
         {
           "ball": "4.3",
@@ -331,7 +385,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Stoinis cuts a short ball to sweeper cover for 2 runs due to a fumble."
+          "shot_type": "cut",
+          "shot_zone": "deep_cover",
+          "commentary": "Stoinis cuts a short delivery outside off to sweeper cover for two runs."
         },
         {
           "ball": "4.4",
@@ -341,7 +397,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Stoinis defends a probing line around the off stump."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Stoinis defends a probing delivery around off stump."
         },
         {
           "ball": "4.5",
@@ -351,6 +409,8 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
+          "shot_type": "cut",
+          "shot_zone": "deep_cover",
           "commentary": "Stoinis slaps a short and wide delivery to sweeper cover for four."
         },
         {
@@ -361,7 +421,9 @@
           "is_wicket": false,
           "extras": "wide",
           "wicket": null,
-          "commentary": "Hussain bowls a wayward wide delivery outside off stump."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Wayward delivery wide outside off stump, called wide."
         },
         {
           "ball": "4.6",
@@ -371,7 +433,9 @@
           "is_wicket": false,
           "extras": "no_ball",
           "wicket": null,
-          "commentary": "Stoinis hits a high full-toss no-ball for four to deep extra cover."
+          "shot_type": "drive",
+          "shot_zone": "deep_cover",
+          "commentary": "Stoinis slaps a high full-toss wide outside off to deep extra cover for four (no ball)."
         },
         {
           "ball": "4.6",
@@ -381,7 +445,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Stoinis clips a full delivery on the pads for a six over backward square leg."
+          "shot_type": "flick",
+          "shot_zone": "square_leg",
+          "commentary": "Stoinis clips a full delivery on the pads effortlessly over backward square leg for six."
         }
       ],
       "total_runs": 19,
@@ -392,74 +458,88 @@
       "score_at_start": "57-3",
       "balls": [
         {
-          "ball": "5.1",
+          "ball": "6.1",
           "bowler": "Eshan Malinga",
           "batsman": "Cooper Connolly",
           "runs": 4,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Fuller length outside off, Connolly throws his bat at it, the ball races off the outside half of the bat to deep backward point."
+          "shot_type": "drive",
+          "shot_zone": "deep_point",
+          "commentary": "Fuller length outside off, Connolly throws his bat at it, ball races off the outside half of the bat to deep backward point for four."
         },
         {
-          "ball": "5.2",
+          "ball": "6.2",
           "bowler": "Eshan Malinga",
           "batsman": "Cooper Connolly",
           "runs": 4,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Slower short delivery on middle, Connolly picked the length early and pulls it to deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Slower short delivery on middle, Connolly pulls it to deep mid-wicket for four."
         },
         {
-          "ball": "5.3",
+          "ball": "6.3",
           "bowler": "Eshan Malinga",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": "wide",
           "wicket": null,
-          "commentary": "Slower short delivery again, but wide outside off stump, the pressure has got to him."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Slower short delivery, wide outside off stump."
         },
         {
-          "ball": "5.3",
+          "ball": "6.4",
           "bowler": "Eshan Malinga",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Huge appeal for a caught behind, but the umpire remain unmoved, yorker length delivery just outside off, Connolly fails to dig it out."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Yorker length delivery just outside off, Connolly fails to dig it out."
         },
         {
-          "ball": "5.4",
+          "ball": "6.5",
           "bowler": "Eshan Malinga",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "The effort ball, banged in short, this one climbed a bit, Connolly sways out of the line."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Banged in short, Connolly sways out of the line."
         },
         {
-          "ball": "5.5",
+          "ball": "6.6",
           "bowler": "Eshan Malinga",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Slower and fuller on off, Connolly can't pierce the field and hits it straight to covers."
+          "shot_type": "drive",
+          "shot_zone": "cover",
+          "commentary": "Slower and fuller on off, Connolly hits it straight to covers."
         },
         {
-          "ball": "5.6",
+          "ball": "6.7",
           "bowler": "Eshan Malinga",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Excellent comeback from Malinga after the first two deliveries, 4 dots in a row, yorker length delivery on middle and leg, Connolly just manages to dig it out to the off side."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Yorker length delivery on middle and leg, Connolly just manages to dig it out to the off side."
         }
       ],
       "total_runs": 9,
@@ -477,7 +557,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Tossed up well down the leg side, Stoinis sweeps it to fine leg for two runs."
+          "shot_type": "sweep",
+          "shot_zone": "fine_leg",
+          "commentary": "Stoinis sweeps a tossed up delivery to fine leg for two runs."
         },
         {
           "ball": "6.2",
@@ -487,7 +569,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Tossed up and in the slot, Stoinis creams it to deep extra cover for four."
+          "shot_type": "drive",
+          "shot_zone": "deep_cover",
+          "commentary": "Stoinis creams a tossed up delivery to deep extra cover for a boundary."
         },
         {
           "ball": "6.3",
@@ -497,7 +581,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "The quicker one, pushed through, Stoinis misses the cut."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Stoinis misses a quicker delivery attempting a cut."
         },
         {
           "ball": "6.4",
@@ -511,7 +597,9 @@
             "fielder": "Ishan Kishan",
             "batsman_out": "Marcus Stoinis"
           },
-          "commentary": "Stoinis edges a quicker googly, caught by Ishan Kishan on the second attempt."
+          "shot_type": "edge",
+          "shot_zone": "slip_gully",
+          "commentary": "Stoinis edges a quicker googly attempting a cut and is caught by Ishan Kishan."
         },
         {
           "ball": "6.5",
@@ -521,7 +609,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Short and outside off, Shedge stands tall and cuts it to sweeper cover."
+          "shot_type": "cut",
+          "shot_zone": "deep_cover",
+          "commentary": "Shedge cuts a short and wide delivery to sweeper cover for a single."
         },
         {
           "ball": "6.6",
@@ -531,7 +621,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Short and turning in, Connolly punches it to covers."
+          "shot_type": "drive",
+          "shot_zone": "cover",
+          "commentary": "Connolly punches a short delivery to covers."
         }
       ],
       "total_runs": 7,
@@ -542,64 +634,76 @@
       "score_at_start": "69-4",
       "balls": [
         {
-          "ball": "7.1",
+          "ball": "8.1",
           "bowler": "Nitish Reddy",
           "batsman": "Suryansh Shedge",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge pushes a back of a length delivery outside off to point."
+          "shot_type": "defend",
+          "shot_zone": "point",
+          "commentary": "Shedge pushes a back of a length delivery to point."
         },
         {
-          "ball": "7.2",
+          "ball": "8.2",
           "bowler": "Nitish Reddy",
           "batsman": "Suryansh Shedge",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge pushes a full delivery angling into the stumps to point."
+          "shot_type": "defend",
+          "shot_zone": "point",
+          "commentary": "Shedge pushes a full delivery to point."
         },
         {
-          "ball": "7.3",
+          "ball": "8.3",
           "bowler": "Nitish Reddy",
           "batsman": "Cooper Connolly",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly works a back of a length delivery angling into the pads to deep mid-wicket."
+          "shot_type": "flick",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Connolly works a back of a length delivery to deep mid-wicket."
         },
         {
-          "ball": "7.4",
+          "ball": "8.4",
           "bowler": "Nitish Reddy",
           "batsman": "Suryansh Shedge",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge guides a slightly short delivery around the off stump to deep backward point."
+          "shot_type": "cut",
+          "shot_zone": "deep_point",
+          "commentary": "Shedge guides a slightly short delivery to deep backward point."
         },
         {
-          "ball": "7.5",
+          "ball": "8.5",
           "bowler": "Nitish Reddy",
           "batsman": "Cooper Connolly",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly pulls a short delivery on middle to deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Connolly pulls a short delivery to deep mid-wicket."
         },
         {
-          "ball": "7.6",
+          "ball": "8.6",
           "bowler": "Nitish Reddy",
           "batsman": "Suryansh Shedge",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge works a back of a length delivery angling in to deep mid-wicket."
+          "shot_type": "flick",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Shedge works a back of a length delivery to deep mid-wicket."
         }
       ],
       "total_runs": 5,
@@ -610,64 +714,76 @@
       "score_at_start": "74-4",
       "balls": [
         {
-          "ball": "9.1",
+          "ball": "8.6",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "shot_type": "cut",
+          "shot_zone": "point",
+          "commentary": "Cooper Connolly makes room and cuts straight to backward point."
+        },
+        {
+          "ball": "8.5",
           "bowler": "Shivang Kumar",
           "batsman": "Suryansh Shedge",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge goes on the back foot and whips it to deep backward square-leg."
+          "shot_type": "defend",
+          "shot_zone": "third_man",
+          "commentary": "Suryansh Shedge taps a googly to the right of short third man for one."
         },
         {
-          "ball": "9.2",
+          "ball": "8.4",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "shot_type": "defend",
+          "shot_zone": "third_man",
+          "commentary": "Suryansh Shedge dabs a googly to short third man."
+        },
+        {
+          "ball": "8.3",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "shot_type": "sweep",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Cooper Connolly slogsweeps a full ball to deep mid-wicket for one."
+        },
+        {
+          "ball": "8.2",
           "bowler": "Shivang Kumar",
           "batsman": "Cooper Connolly",
           "runs": 2,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly gets forward to drive and goes inside-out, wide of sweeper cover for two."
+          "shot_type": "drive",
+          "shot_zone": "deep_cover",
+          "commentary": "Cooper Connolly drives inside-out, wide of sweeper cover for two."
         },
         {
-          "ball": "9.3",
-          "bowler": "Shivang Kumar",
-          "batsman": "Cooper Connolly",
-          "runs": 1,
-          "is_wicket": false,
-          "extras": null,
-          "wicket": null,
-          "commentary": "Cooper Connolly sinks low to slogsweep and doesn't time it, straight to the fielder at deep mid-wicket."
-        },
-        {
-          "ball": "9.4",
-          "bowler": "Shivang Kumar",
-          "batsman": "Suryansh Shedge",
-          "runs": 0,
-          "is_wicket": false,
-          "extras": null,
-          "wicket": null,
-          "commentary": "Suryansh Shedge goes on the back foot to dab a flat googly to short third man."
-        },
-        {
-          "ball": "9.5",
+          "ball": "8.1",
           "bowler": "Shivang Kumar",
           "batsman": "Suryansh Shedge",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge taps a googly to the right of short third man for one."
-        },
-        {
-          "ball": "9.6",
-          "bowler": "Shivang Kumar",
-          "batsman": "Cooper Connolly",
-          "runs": 0,
-          "is_wicket": false,
-          "extras": null,
-          "wicket": null,
-          "commentary": "Cooper Connolly cuts a flat good length ball straight to the fielder at backward point."
+          "shot_type": "flick",
+          "shot_zone": "deep_square_leg",
+          "commentary": "Suryansh Shedge whips it to deep backward square-leg for one."
         }
       ],
       "total_runs": 5,
@@ -678,84 +794,100 @@
       "score_at_start": "91-4",
       "balls": [
         {
-          "ball": "9.1",
+          "ball": "10.1",
           "bowler": "Harsh Dubey",
           "batsman": "Suryansh Shedge",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge flicks a good length delivery to deep mid-wicket for a single."
+          "shot_type": "flick",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Drifts into middle and leg, Suryansh Shedge flicks it to deep mid-wicket for a single."
         },
         {
-          "ball": "9.2",
+          "ball": "10.2",
           "bowler": "Harsh Dubey",
           "batsman": "Cooper Connolly",
-          "runs": 0,
+          "runs": 1,
           "is_wicket": false,
           "extras": "wide",
           "wicket": null,
-          "commentary": "Harsh Dubey bowls a wide delivery outside off, missed by Cooper Connolly."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Flat and wide outside off, Cooper Connolly cuts and misses, a wide called."
         },
         {
-          "ball": "9.2",
+          "ball": "10.2",
           "bowler": "Harsh Dubey",
           "batsman": "Cooper Connolly",
-          "runs": 0,
+          "runs": 1,
           "is_wicket": false,
           "extras": "wide",
           "wicket": null,
-          "commentary": "Harsh Dubey bowls another wide outside off, left alone by Cooper Connolly."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Another wide outside off, Cooper Connolly leaves it alone."
         },
         {
-          "ball": "9.2",
+          "ball": "10.2",
           "bowler": "Harsh Dubey",
           "batsman": "Cooper Connolly",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly punches a good length delivery to long-on for a single."
+          "shot_type": "drive",
+          "shot_zone": "long_on",
+          "commentary": "On a good length on middle, Cooper Connolly punches it to long-on for a single."
         },
         {
-          "ball": "9.3",
+          "ball": "10.3",
           "bowler": "Harsh Dubey",
           "batsman": "Suryansh Shedge",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge gets a single to deep mid-wicket off a full delivery."
+          "shot_type": "flick",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Tossed up full on middle, Suryansh Shedge heaves it for a single to deep mid-wicket."
         },
         {
-          "ball": "9.4",
+          "ball": "10.4",
           "bowler": "Harsh Dubey",
           "batsman": "Cooper Connolly",
           "runs": 6,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly lofts a short delivery for a six to wide long-on."
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_on",
+          "commentary": "Dropped short, Cooper Connolly lofts it on the rise to wide long-on for six."
         },
         {
-          "ball": "9.5",
+          "ball": "10.5",
           "bowler": "Harsh Dubey",
           "batsman": "Cooper Connolly",
           "runs": 6,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly hits a full delivery for a consecutive six to long-off."
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_off",
+          "commentary": "Tossed up full, Cooper Connolly lofts it into the crowd at long-off for six."
         },
         {
-          "ball": "9.6",
+          "ball": "10.6",
           "bowler": "Harsh Dubey",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly misses a yorker length delivery outside off."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Fires a yorker length delivery outside off, Cooper Connolly misses while trying to dig it out."
         }
       ],
       "total_runs": 17,
@@ -773,7 +905,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge lofts a full googly over long-off for six."
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_off",
+          "commentary": "Suryansh Shedge gets forward to loft a full googly, clearing the long-off fence for six."
         },
         {
           "ball": "10.2",
@@ -783,7 +917,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge flat-bats a short googly for four, aided by a fielding error."
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_off",
+          "commentary": "Suryansh Shedge flat-bats a short googly to long-off for four, despite a lazy fielding effort."
         },
         {
           "ball": "10.3",
@@ -793,7 +929,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge cuts a wide delivery to sweeper cover for a single."
+          "shot_type": "cut",
+          "shot_zone": "deep_cover",
+          "commentary": "Suryansh Shedge goes on the back foot and cuts a flat, wide delivery to sweeper cover for a single."
         },
         {
           "ball": "10.4",
@@ -803,7 +941,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly drives a very full delivery to sweeper cover for a single."
+          "shot_type": "drive",
+          "shot_zone": "deep_cover",
+          "commentary": "Cooper Connolly drives a very full delivery outside off to sweeper cover for a single."
         },
         {
           "ball": "10.5",
@@ -813,7 +953,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge attempts a heave but Cummins fields it at mid-wicket."
+          "shot_type": "flick",
+          "shot_zone": "midwicket",
+          "commentary": "Suryansh Shedge gets forward to heave a full delivery, but it goes off the inner half to mid-wicket where Cummins stops it."
         },
         {
           "ball": "10.6",
@@ -823,7 +965,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Suryansh Shedge flat-bats a dragged-down googly over the sightscreen for six."
+          "shot_type": "pull",
+          "shot_zone": "long_on",
+          "commentary": "Suryansh Shedge goes on the back foot and flat-bats a dragged down googly over the sightscreen for six."
         }
       ],
       "total_runs": 18,
@@ -841,7 +985,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Full and angling into the right-hander on middle, Cooper Connolly gets forward to drive it back to Pat Cummins."
+          "shot_type": "drive",
+          "shot_zone": "mid_off",
+          "commentary": "Cooper Connolly drives a full delivery back to the bowler."
         },
         {
           "ball": "11.2",
@@ -851,7 +997,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Slower-ball and short of length outside off, Cooper Connolly gets forward and pulls to deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Cooper Connolly pulls a slower-ball to deep mid-wicket for a single."
         },
         {
           "ball": "11.3",
@@ -861,7 +1009,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Full outside off, Suryansh Shedge shuffles across and drives it well but straight to the fielder at mid-off."
+          "shot_type": "drive",
+          "shot_zone": "mid_off",
+          "commentary": "Suryansh Shedge drives a full delivery straight to mid-off."
         },
         {
           "ball": "11.4",
@@ -875,7 +1025,9 @@
             "fielder": "Abhishek Sharma",
             "batsman_out": "Suryansh Shedge"
           },
-          "commentary": "Slower-ball off-cutter, Shedge gets forward to pull, doesn't time it and holes out to deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Suryansh Shedge pulls a slower-ball off-cutter to deep mid-wicket and is caught by Abhishek Sharma."
         },
         {
           "ball": "11.5",
@@ -885,7 +1037,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Full outside off, Shashank Singh shuffles across and then creams the drive, in the air but wide of cover."
+          "shot_type": "drive",
+          "shot_zone": "deep_cover",
+          "commentary": "Shashank Singh creams a drive in the air wide of cover for four."
         },
         {
           "ball": "11.6",
@@ -895,7 +1049,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Slower-ball off-cutter and dug in short outside off, Shashank Singh slashes and misses, wanted to upper-cut that."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Shashank Singh slashes and misses a slower-ball off-cutter."
         }
       ],
       "total_runs": 5,
@@ -913,7 +1069,10 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly cuts a slower-ball off-cutter for four, wide of backward point."
+          "shot_type": "cut",
+          "shot_zone": "deep_point",
+          "commentary": "Cooper Connolly cuts a slower-ball off-cutter for four, wide of backward point.",
+          "batsman_score": "48 (32)"
         },
         {
           "ball": "12.2",
@@ -923,7 +1082,10 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly pushes a slower-ball off-cutter to extra-cover for a single."
+          "shot_type": "drive",
+          "shot_zone": "cover",
+          "commentary": "Cooper Connolly pushes a full slower-ball to extra-cover for a single.",
+          "batsman_score": "49 (33)"
         },
         {
           "ball": "12.3",
@@ -937,7 +1099,10 @@
             "fielder": "Nitish Reddy",
             "batsman_out": "Shashank Singh"
           },
-          "commentary": "Shashank Singh miscues a pull shot and is caught by Nitish Reddy at deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Shashank Singh miscues a pull to deep mid-wicket and is caught by Nitish Reddy.",
+          "batsman_score": "4 (3)"
         },
         {
           "ball": "12.4",
@@ -947,7 +1112,10 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen punches a good length delivery to sweeper cover for a single."
+          "shot_type": "drive",
+          "shot_zone": "deep_cover",
+          "commentary": "Marco Jansen punches a good length delivery to sweeper cover for a single.",
+          "batsman_score": "1 (2)"
         },
         {
           "ball": "12.5",
@@ -957,7 +1125,10 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly pushes a slower-ball off-cutter to extra-cover for a single."
+          "shot_type": "drive",
+          "shot_zone": "cover",
+          "commentary": "Cooper Connolly pushes a full slower-ball to extra-cover for a single.",
+          "batsman_score": "50 (34)"
         },
         {
           "ball": "12.6",
@@ -967,7 +1138,10 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen lets a slower-ball off-cutter go, it's inside the tramline."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Marco Jansen lets a slower-ball off-cutter go outside off stump.",
+          "batsman_score": "1 (3)"
         }
       ],
       "total_runs": 7,
@@ -978,64 +1152,76 @@
       "score_at_start": "126-6",
       "balls": [
         {
-          "ball": "14.1",
-          "bowler": "Eshan Malinga",
-          "batsman": "Cooper Connolly",
-          "runs": 0,
-          "is_wicket": false,
-          "extras": null,
-          "wicket": null,
-          "commentary": "Dot ball, batsman defends."
-        },
-        {
-          "ball": "14.2",
-          "bowler": "Eshan Malinga",
-          "batsman": "Cooper Connolly",
-          "runs": 2,
-          "is_wicket": false,
-          "extras": null,
-          "wicket": null,
-          "commentary": "Connolly hits it for two runs."
-        },
-        {
-          "ball": "14.3",
-          "bowler": "Eshan Malinga",
-          "batsman": "Cooper Connolly",
-          "runs": 0,
-          "is_wicket": false,
-          "extras": null,
-          "wicket": null,
-          "commentary": "Another dot ball."
-        },
-        {
-          "ball": "14.4",
+          "ball": "13.6",
           "bowler": "Eshan Malinga",
           "batsman": "Cooper Connolly",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Connolly takes a single."
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_off",
+          "commentary": "Cooper Connolly attempts a slog to mid-wicket, toe-ends it to long-off for a single."
         },
         {
-          "ball": "14.5",
+          "ball": "13.5",
           "bowler": "Eshan Malinga",
           "batsman": "Marco Jansen",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Jansen gets a single."
+          "shot_type": "flick",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Marco Jansen flicks a full delivery to deep mid-wicket for a single."
         },
         {
-          "ball": "14.6",
+          "ball": "13.4",
           "bowler": "Eshan Malinga",
           "batsman": "Cooper Connolly",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Connolly finishes the over with a single."
+          "shot_type": "drive",
+          "shot_zone": "deep_cover",
+          "commentary": "Cooper Connolly drives a low full-toss to sweeper cover for a single."
+        },
+        {
+          "ball": "13.3",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Cooper Connolly fails to dig out a fine yorker length delivery."
+        },
+        {
+          "ball": "13.2",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Cooper Connolly pulls a short delivery to deep mid-wicket for two runs."
+        },
+        {
+          "ball": "13.1",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Cooper Connolly taps a short of length delivery to the bowler."
         }
       ],
       "total_runs": 5,
@@ -1046,44 +1232,16 @@
       "score_at_start": "130-6",
       "balls": [
         {
-          "ball": "14.1",
+          "ball": "14.6",
           "bowler": "Sakib Hussain",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Wicked slower-ball off-cutter grips and turns, squares Cooper Connolly up, takes outside-edge but drops short."
-        },
-        {
-          "ball": "14.2",
-          "bowler": "Sakib Hussain",
-          "batsman": "Cooper Connolly",
-          "runs": 1,
-          "is_wicket": false,
-          "extras": null,
-          "wicket": null,
-          "commentary": "Slower-ball off-cutter on middle and off, Cooper Connolly pulls off the thick inside-edge to short fine."
-        },
-        {
-          "ball": "14.3",
-          "bowler": "Sakib Hussain",
-          "batsman": "Marco Jansen",
-          "runs": 1,
-          "is_wicket": false,
-          "extras": null,
-          "wicket": null,
-          "commentary": "Slower-ball off-cutter wide outside off, Marco Jansen miscues a loft, falls short of long-on."
-        },
-        {
-          "ball": "14.4",
-          "bowler": "Sakib Hussain",
-          "batsman": "Cooper Connolly",
-          "runs": 2,
-          "is_wicket": false,
-          "extras": null,
-          "wicket": null,
-          "commentary": "Slower-ball off-cutter on leg-stump, Cooper Connolly top-edges a hoick, bowler drops the catch."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Cooper Connolly clears his front leg to heave to leg and misses."
         },
         {
           "ball": "14.5",
@@ -1093,17 +1251,57 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Slower-ball off-cutter down leg, Cooper Connolly swings early and misses, hit on the box."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Connolly swings too early and misses, hit on the box."
         },
         {
-          "ball": "14.6",
+          "ball": "14.4",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "shot_type": "pull",
+          "shot_zone": "midwicket",
+          "commentary": "Cooper Connolly looks for the leg-side hoick, top-edges it for 2 runs."
+        },
+        {
+          "ball": "14.3",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_on",
+          "commentary": "Marco Jansen gets forward to loft, miscues it, falls short of long-on for 1 run."
+        },
+        {
+          "ball": "14.2",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "shot_type": "pull",
+          "shot_zone": "mid_on",
+          "commentary": "Cooper Connolly pulls, off the thick inside-edge to the right of short fine for 1 run."
+        },
+        {
+          "ball": "14.1",
           "bowler": "Sakib Hussain",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Slower-ball off-cutter just outside off, Cooper Connolly misses a heave to leg."
+          "shot_type": "edge",
+          "shot_zone": "slip_gully",
+          "commentary": "Cooper Connolly is surprised, takes the outside-edge but drops just short of Ishan Kishan."
         }
       ],
       "total_runs": 4,
@@ -1114,64 +1312,76 @@
       "score_at_start": "142-6",
       "balls": [
         {
-          "ball": "16.1",
+          "ball": "15.1",
           "bowler": "Pat Cummins",
           "batsman": "Marco Jansen",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen flicks a yorker for a single to deep mid-wicket."
+          "shot_type": "flick",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Marco Jansen flicks a yorker to deep mid-wicket for a single."
         },
         {
-          "ball": "16.2",
+          "ball": "15.2",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 6,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly slams a slower-ball for a six into the 2nd-tier at deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Cooper Connolly slams a pull shot for six into the 2nd-tier at deep mid-wicket."
         },
         {
-          "ball": "16.3",
+          "ball": "15.3",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly drives a full ball straight to long-off for a single."
+          "shot_type": "drive",
+          "shot_zone": "long_off",
+          "commentary": "Cooper Connolly drives hard and straight to long-off for a single."
         },
         {
-          "ball": "16.4",
+          "ball": "15.4",
           "bowler": "Pat Cummins",
           "batsman": "Marco Jansen",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen pulls a slower-ball off-cutter for a single to deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Marco Jansen pulls a short slower-ball to deep mid-wicket for a single."
         },
         {
-          "ball": "16.5",
+          "ball": "15.5",
           "bowler": "Pat Cummins",
           "batsman": "Cooper Connolly",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly digs out a yorker for a single to the off-side."
+          "shot_type": "defend",
+          "shot_zone": "no_shot",
+          "commentary": "Cooper Connolly digs out a fine yorker to the off-side for a single."
         },
         {
-          "ball": "16.6",
+          "ball": "15.6",
           "bowler": "Pat Cummins",
           "batsman": "Marco Jansen",
           "runs": 2,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen flicks a full ball for 2 runs to deep mid-wicket."
+          "shot_type": "flick",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Marco Jansen flicks a full delivery for two runs towards deep mid-wicket."
         }
       ],
       "total_runs": 12,
@@ -1189,7 +1399,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly top-edges a slog, Shivang drops the catch at deep mid-wicket, allowing a single."
+          "shot_type": "edge",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Cooper Connolly top-edges a slog, dropped by Shivang at deep mid-wicket for 1 run."
         },
         {
           "ball": "17.2",
@@ -1199,7 +1411,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen drives, the thick inside-edge goes to the vacant mid-wicket area."
+          "shot_type": "drive",
+          "shot_zone": "midwicket",
+          "commentary": "Marco Jansen drives, the thick inside-edge goes to the vacant mid-wicket area for 1 run."
         },
         {
           "ball": "17.3",
@@ -1209,7 +1423,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly picks the slower-ball and slams it straight down the ground for a six."
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_off",
+          "commentary": "Cooper Connolly slams a full and wide off-cutter straight down the ground for SIX."
         },
         {
           "ball": "17.4",
@@ -1219,7 +1435,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly pulls flat and over deep mid-wicket for a six."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Cooper Connolly pulls flat and over deep mid-wicket for SIX."
         },
         {
           "ball": "17.5",
@@ -1229,7 +1447,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly gets forward to drive and mistimes it down to long-on."
+          "shot_type": "drive",
+          "shot_zone": "long_on",
+          "commentary": "Cooper Connolly drives and mistimes it down to long-on for 1 run."
         },
         {
           "ball": "17.6",
@@ -1239,7 +1459,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen gets forward to pull, off the thick inside-edge to deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Marco Jansen pulls off the thick inside-edge to deep mid-wicket for 1 run."
         }
       ],
       "total_runs": 16,
@@ -1253,11 +1475,13 @@
           "ball": "18.1",
           "bowler": "Sakib Hussain",
           "batsman": "Marco Jansen",
-          "runs": 1,
+          "runs": 0,
           "is_wicket": false,
           "extras": "wide",
           "wicket": null,
-          "commentary": "Slower-ball off-cutter, well wide outside off, left alone."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Slower-ball off-cutter well wide outside off, left alone."
         },
         {
           "ball": "18.1",
@@ -1267,7 +1491,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Low full-toss, Marco Jansen drives for a single to long-on."
+          "shot_type": "drive",
+          "shot_zone": "long_on",
+          "commentary": "Low full-toss, Marco Jansen drives to long-on."
         },
         {
           "ball": "18.2",
@@ -1277,7 +1503,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Slower-ball off-cutter, Cooper Connolly pulls for two runs to deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Slower-ball off-cutter, Cooper Connolly pulls to deep mid-wicket for two."
         },
         {
           "ball": "18.3",
@@ -1287,7 +1515,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Slower-ball off-cutter, Cooper Connolly drives for a single that bursts through the bowler's hands."
+          "shot_type": "drive",
+          "shot_zone": "mid_on",
+          "commentary": "Slower-ball off-cutter, Cooper Connolly drives, bursts through bowler's hands for one."
         },
         {
           "ball": "18.4",
@@ -1297,7 +1527,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Short delivery on the stumps, Marco Jansen ducks."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Dug in short on the stumps, Marco Jansen ducks."
         },
         {
           "ball": "18.5",
@@ -1307,7 +1539,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Slower-ball off-cutter, Marco Jansen swings for a single to deep mid-wicket."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Slower-ball off-cutter, Marco Jansen swings to deep mid-wicket for one."
         },
         {
           "ball": "18.6",
@@ -1317,7 +1551,9 @@
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Thick outside-edge for four runs through the vacant slip cordon."
+          "shot_type": "edge",
+          "shot_zone": "slip_gully",
+          "commentary": "Low full-toss, Cooper Connolly edges through the vacant slip cordon for four."
         }
       ],
       "total_runs": 10,
@@ -1328,64 +1564,76 @@
       "score_at_start": "187-6",
       "balls": [
         {
-          "ball": "18.1",
+          "ball": "19.1",
           "bowler": "Harsh Dubey",
           "batsman": "Marco Jansen",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen mistimes a pull to deep mid-wicket for a single."
+          "shot_type": "pull",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Jansen mistimes a pull shot to deep mid-wicket for a single."
         },
         {
-          "ball": "18.2",
+          "ball": "19.2",
           "bowler": "Harsh Dubey",
           "batsman": "Cooper Connolly",
           "runs": 4,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly gets a thick inside-edge for FOUR to deep backward square-leg."
+          "shot_type": "edge",
+          "shot_zone": "deep_square_leg",
+          "commentary": "Connolly gets a thick inside-edge to a drive, running to deep backward square-leg for four."
         },
         {
-          "ball": "18.3",
+          "ball": "19.3",
           "bowler": "Harsh Dubey",
           "batsman": "Cooper Connolly",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly drives a full delivery hard to long-on for a single."
+          "shot_type": "drive",
+          "shot_zone": "long_on",
+          "commentary": "Connolly drives a full delivery hard and straight to long-on for a single."
         },
         {
-          "ball": "18.4",
+          "ball": "19.4",
           "bowler": "Harsh Dubey",
           "batsman": "Marco Jansen",
           "runs": 6,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen lofts a length delivery for SIX, just clearing long-off."
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_off",
+          "commentary": "Jansen lofts a length delivery over long-off for six."
         },
         {
-          "ball": "18.5",
+          "ball": "19.5",
           "bowler": "Harsh Dubey",
           "batsman": "Marco Jansen",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Marco Jansen forces a flat length delivery to long-off for a single."
+          "shot_type": "drive",
+          "shot_zone": "long_off",
+          "commentary": "Jansen forces a flat length delivery down to long-off for a single."
         },
         {
-          "ball": "18.6",
+          "ball": "19.6",
           "bowler": "Harsh Dubey",
           "batsman": "Cooper Connolly",
           "runs": 6,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly hits a SIX, clearing long-on, moving into the 90s."
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_on",
+          "commentary": "Connolly slices a full delivery with elevation to clear long-on for six."
         }
       ],
       "total_runs": 19,
@@ -1396,7 +1644,7 @@
       "score_at_start": "202-7",
       "balls": [
         {
-          "ball": "19.1",
+          "ball": "20.1",
           "bowler": "Shivang Kumar",
           "batsman": "Marco Jansen",
           "runs": 0,
@@ -1407,77 +1655,93 @@
             "fielder": "Harsh Dubey",
             "batsman_out": "Marco Jansen"
           },
-          "commentary": "Marco Jansen is caught by Harsh Dubey off Shivang Kumar."
+          "shot_type": "drive",
+          "shot_zone": "point",
+          "commentary": "Marco Jansen attempts to drive over extra-cover, slices it to backward point and is caught by Harsh Dubey."
         },
         {
-          "ball": "19.2",
+          "ball": "20.2",
           "bowler": "Shivang Kumar",
           "batsman": "Vijaykumar Vyshak",
           "runs": 1,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Vijaykumar Vyshak dabs a googly for a single."
+          "shot_type": "edge",
+          "shot_zone": "third_man",
+          "commentary": "Vijaykumar Vyshak dabs a googly, top-edges it for a single to short third man."
         },
         {
-          "ball": "19.3",
+          "ball": "20.3",
           "bowler": "Shivang Kumar",
           "batsman": "Cooper Connolly",
           "runs": 2,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly whips the ball to deep mid-wicket for two runs."
+          "shot_type": "flick",
+          "shot_zone": "deep_midwicket",
+          "commentary": "Cooper Connolly whips a ball turning into leg-stump to deep mid-wicket for two runs."
         },
         {
-          "ball": "19.4",
+          "ball": "20.4",
           "bowler": "Shivang Kumar",
           "batsman": "Cooper Connolly",
-          "runs": 0,
+          "runs": 1,
           "is_wicket": false,
           "extras": "wide",
           "wicket": null,
-          "commentary": "Shivang Kumar bowls a wide outside off."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Shivang Kumar bowls a wide delivery outside off, left alone by Cooper Connolly."
         },
         {
-          "ball": "19.4",
+          "ball": "20.4",
           "bowler": "Shivang Kumar",
           "batsman": "Cooper Connolly",
           "runs": 4,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly hits a falling sweep for four, reaching his first IPL ton."
+          "shot_type": "sweep",
+          "shot_zone": "boundary_rope",
+          "commentary": "Cooper Connolly plays a falling sweep for four, reaching his first IPL century."
         },
         {
-          "ball": "19.5",
+          "ball": "20.5",
           "bowler": "Shivang Kumar",
           "batsman": "Cooper Connolly",
-          "runs": 0,
+          "runs": 1,
           "is_wicket": false,
           "extras": "wide",
           "wicket": null,
-          "commentary": "Shivang Kumar bowls another wide outside off."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Shivang Kumar bowls another wide delivery outside off, left alone by Cooper Connolly."
         },
         {
-          "ball": "19.5",
+          "ball": "20.5",
           "bowler": "Shivang Kumar",
           "batsman": "Cooper Connolly",
           "runs": 6,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly backs away and powers a flat-batted shot for a six."
+          "shot_type": "lofted_drive",
+          "shot_zone": "long_off",
+          "commentary": "Cooper Connolly backs away and powers a flat-batted shot over long-off for six."
         },
         {
-          "ball": "19.6",
+          "ball": "20.6",
           "bowler": "Shivang Kumar",
           "batsman": "Cooper Connolly",
           "runs": 0,
           "is_wicket": false,
           "extras": null,
           "wicket": null,
-          "commentary": "Cooper Connolly fails to connect with a slogsweep, ending the game."
+          "shot_type": "no_shot",
+          "shot_zone": "no_shot",
+          "commentary": "Cooper Connolly attempts a slogsweep but misses, ending the game."
         }
       ],
       "total_runs": 15,
@@ -1485,7 +1749,7 @@
     }
   ],
   "metadata": {
-    "parsedAt": "2026-05-07T02:47:36.384Z",
+    "parsedAt": "2026-05-07T08:56:56.575Z",
     "parser": "gemini-2.5-flash",
     "sourceFile": "Commentary.txt",
     "totalBalls": 129,
