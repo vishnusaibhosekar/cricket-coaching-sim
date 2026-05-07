@@ -1,0 +1,1495 @@
+{
+  "matchId": "srh-vs-pbks-2026-05-06",
+  "innings": 2,
+  "battingTeam": "PBKS",
+  "bowlingTeam": "SRH",
+  "totalOvers": 20,
+  "overs": [
+    {
+      "over": 1,
+      "score_at_start": "4-1",
+      "balls": [
+        {
+          "ball": "1.1",
+          "bowler": "Pat Cummins",
+          "batsman": "Priyansh Arya",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Priyansh Arya guides a good length delivery for a single."
+        },
+        {
+          "ball": "1.2",
+          "bowler": "Pat Cummins",
+          "batsman": "Prabhsimran Singh",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Prabhsimran Singh punches a back of a length ball for two runs due to a fumble."
+        },
+        {
+          "ball": "1.3",
+          "bowler": "Pat Cummins",
+          "batsman": "Prabhsimran Singh",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Prabhsimran Singh defends a back of a length delivery on middle."
+        },
+        {
+          "ball": "1.4",
+          "bowler": "Pat Cummins",
+          "batsman": "Prabhsimran Singh",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Prabhsimran Singh cuts a short and wide delivery for a single."
+        },
+        {
+          "ball": "1.5",
+          "bowler": "Pat Cummins",
+          "batsman": "Priyansh Arya",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Priyansh Arya misses a short, fast delivery from Pat Cummins."
+        },
+        {
+          "ball": "1.6",
+          "bowler": "Pat Cummins",
+          "batsman": "Priyansh Arya",
+          "runs": 0,
+          "is_wicket": true,
+          "extras": null,
+          "wicket": {
+            "type": "caught",
+            "fielder": "Eshan Malinga",
+            "batsman_out": "Priyansh Arya"
+          },
+          "commentary": "Priyansh Arya caught by Eshan Malinga off Pat Cummins, attempting a hook shot."
+        }
+      ],
+      "total_runs": 4,
+      "wickets": 1
+    },
+    {
+      "over": 1,
+      "score_at_start": "10-2",
+      "balls": [
+        {
+          "ball": "1.1",
+          "bowler": "Nitish Reddy",
+          "batsman": "Prabhsimran Singh",
+          "runs": 0,
+          "is_wicket": true,
+          "extras": null,
+          "wicket": {
+            "type": "caught",
+            "fielder": "Pat Cummins",
+            "batsman_out": "Prabhsimran Singh"
+          },
+          "commentary": "Prabhsimran Singh is caught by Pat Cummins off Nitish Reddy."
+        },
+        {
+          "ball": "1.2",
+          "bowler": "Nitish Reddy",
+          "batsman": "Shreyas Iyer",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Shreyas Iyer hits a four off a short and wide delivery."
+        },
+        {
+          "ball": "1.3",
+          "bowler": "Nitish Reddy",
+          "batsman": "Shreyas Iyer",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Shreyas Iyer defends a good length delivery."
+        },
+        {
+          "ball": "1.4",
+          "bowler": "Nitish Reddy",
+          "batsman": "Shreyas Iyer",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Shreyas Iyer taps a back of a length delivery for a single."
+        },
+        {
+          "ball": "1.5",
+          "bowler": "Nitish Reddy",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly flashes hard and misses a probing length delivery."
+        },
+        {
+          "ball": "1.6",
+          "bowler": "Nitish Reddy",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly mistimes a drive for a single to mid-on."
+        }
+      ],
+      "total_runs": 6,
+      "wickets": 1
+    },
+    {
+      "over": 3,
+      "score_at_start": "23-2",
+      "balls": [
+        {
+          "ball": "2.1",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Hint of width, Connolly latched onto it and slayed it square of the wicket for four."
+        },
+        {
+          "ball": "2.2",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Short delivery, Connolly punched it off the back foot square of the wicket for two runs."
+        },
+        {
+          "ball": "2.3",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Probing line around off stump, Connolly punched it towards mid off."
+        },
+        {
+          "ball": "2.4",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": "no_ball",
+          "wicket": null,
+          "commentary": "Cummins bowled a slower short delivery, Connolly was beaten, and Cummins overstepped for a no ball."
+        },
+        {
+          "ball": "2.4",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Connolly made full use of the freehit, slicing a full delivery over deep point for six."
+        },
+        {
+          "ball": "2.5",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Back of a length delivery outside off, Connolly defended it to the off side."
+        },
+        {
+          "ball": "2.6",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Yorker length delivery on off, Connolly dug it out towards point."
+        }
+      ],
+      "total_runs": 13,
+      "wickets": 0
+    },
+    {
+      "over": 4,
+      "score_at_start": "29-3",
+      "balls": [
+        {
+          "ball": "3.1",
+          "bowler": "Eshan Malinga",
+          "batsman": "Shreyas Iyer",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Full and swinging into the pads, Iyer drives it towards mid on."
+        },
+        {
+          "ball": "3.2",
+          "bowler": "Eshan Malinga",
+          "batsman": "Shreyas Iyer",
+          "runs": 0,
+          "is_wicket": true,
+          "extras": null,
+          "wicket": {
+            "type": "caught",
+            "fielder": "Pat Cummins",
+            "batsman_out": "Shreyas Iyer"
+          },
+          "commentary": "Shreyas Iyer attempts to go inside out over cover but slices an off cutter to Pat Cummins at mid off."
+        },
+        {
+          "ball": "3.3",
+          "bowler": "Eshan Malinga",
+          "batsman": "Marcus Stoinis",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Back of a length targeting the stumps, Stoinis defends it towards mid on."
+        },
+        {
+          "ball": "3.4",
+          "bowler": "Eshan Malinga",
+          "batsman": "Marcus Stoinis",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Angling in from back of a length, Stoinis pushes it back to the bowler."
+        },
+        {
+          "ball": "3.5",
+          "bowler": "Eshan Malinga",
+          "batsman": "Marcus Stoinis",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Stoinis hits a full delivery over deep mid-wicket for a big six."
+        },
+        {
+          "ball": "3.6",
+          "bowler": "Eshan Malinga",
+          "batsman": "Marcus Stoinis",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Stoinis attempts a heave off a change of pace but fails to connect."
+        }
+      ],
+      "total_runs": 6,
+      "wickets": 1
+    },
+    {
+      "over": 5,
+      "score_at_start": "48-3",
+      "balls": [
+        {
+          "ball": "4.1",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Connolly cuts a short ball to deep backward point for 1 run."
+        },
+        {
+          "ball": "4.2",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marcus Stoinis",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Stoinis defends a back of a length ball angling into the stumps."
+        },
+        {
+          "ball": "4.3",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marcus Stoinis",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Stoinis cuts a short ball to sweeper cover for 2 runs due to a fumble."
+        },
+        {
+          "ball": "4.4",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marcus Stoinis",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Stoinis defends a probing line around the off stump."
+        },
+        {
+          "ball": "4.5",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marcus Stoinis",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Stoinis slaps a short and wide delivery to sweeper cover for four."
+        },
+        {
+          "ball": "4.6",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marcus Stoinis",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": "wide",
+          "wicket": null,
+          "commentary": "Hussain bowls a wayward wide delivery outside off stump."
+        },
+        {
+          "ball": "4.6",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marcus Stoinis",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": "no_ball",
+          "wicket": null,
+          "commentary": "Stoinis hits a high full-toss no-ball for four to deep extra cover."
+        },
+        {
+          "ball": "4.6",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marcus Stoinis",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Stoinis clips a full delivery on the pads for a six over backward square leg."
+        }
+      ],
+      "total_runs": 19,
+      "wickets": 0
+    },
+    {
+      "over": 6,
+      "score_at_start": "57-3",
+      "balls": [
+        {
+          "ball": "5.1",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Fuller length outside off, Connolly throws his bat at it, the ball races off the outside half of the bat to deep backward point."
+        },
+        {
+          "ball": "5.2",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower short delivery on middle, Connolly picked the length early and pulls it to deep mid-wicket."
+        },
+        {
+          "ball": "5.3",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": "wide",
+          "wicket": null,
+          "commentary": "Slower short delivery again, but wide outside off stump, the pressure has got to him."
+        },
+        {
+          "ball": "5.3",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Huge appeal for a caught behind, but the umpire remain unmoved, yorker length delivery just outside off, Connolly fails to dig it out."
+        },
+        {
+          "ball": "5.4",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "The effort ball, banged in short, this one climbed a bit, Connolly sways out of the line."
+        },
+        {
+          "ball": "5.5",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower and fuller on off, Connolly can't pierce the field and hits it straight to covers."
+        },
+        {
+          "ball": "5.6",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Excellent comeback from Malinga after the first two deliveries, 4 dots in a row, yorker length delivery on middle and leg, Connolly just manages to dig it out to the off side."
+        }
+      ],
+      "total_runs": 9,
+      "wickets": 0
+    },
+    {
+      "over": 7,
+      "score_at_start": "64-4",
+      "balls": [
+        {
+          "ball": "6.1",
+          "bowler": "Shivang Kumar",
+          "batsman": "Marcus Stoinis",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Tossed up well down the leg side, Stoinis sweeps it to fine leg for two runs."
+        },
+        {
+          "ball": "6.2",
+          "bowler": "Shivang Kumar",
+          "batsman": "Marcus Stoinis",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Tossed up and in the slot, Stoinis creams it to deep extra cover for four."
+        },
+        {
+          "ball": "6.3",
+          "bowler": "Shivang Kumar",
+          "batsman": "Marcus Stoinis",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "The quicker one, pushed through, Stoinis misses the cut."
+        },
+        {
+          "ball": "6.4",
+          "bowler": "Shivang Kumar",
+          "batsman": "Marcus Stoinis",
+          "runs": 0,
+          "is_wicket": true,
+          "extras": null,
+          "wicket": {
+            "type": "caught",
+            "fielder": "Ishan Kishan",
+            "batsman_out": "Marcus Stoinis"
+          },
+          "commentary": "Stoinis edges a quicker googly, caught by Ishan Kishan on the second attempt."
+        },
+        {
+          "ball": "6.5",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Short and outside off, Shedge stands tall and cuts it to sweeper cover."
+        },
+        {
+          "ball": "6.6",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Short and turning in, Connolly punches it to covers."
+        }
+      ],
+      "total_runs": 7,
+      "wickets": 1
+    },
+    {
+      "over": 8,
+      "score_at_start": "69-4",
+      "balls": [
+        {
+          "ball": "7.1",
+          "bowler": "Nitish Reddy",
+          "batsman": "Suryansh Shedge",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge pushes a back of a length delivery outside off to point."
+        },
+        {
+          "ball": "7.2",
+          "bowler": "Nitish Reddy",
+          "batsman": "Suryansh Shedge",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge pushes a full delivery angling into the stumps to point."
+        },
+        {
+          "ball": "7.3",
+          "bowler": "Nitish Reddy",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly works a back of a length delivery angling into the pads to deep mid-wicket."
+        },
+        {
+          "ball": "7.4",
+          "bowler": "Nitish Reddy",
+          "batsman": "Suryansh Shedge",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge guides a slightly short delivery around the off stump to deep backward point."
+        },
+        {
+          "ball": "7.5",
+          "bowler": "Nitish Reddy",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly pulls a short delivery on middle to deep mid-wicket."
+        },
+        {
+          "ball": "7.6",
+          "bowler": "Nitish Reddy",
+          "batsman": "Suryansh Shedge",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge works a back of a length delivery angling in to deep mid-wicket."
+        }
+      ],
+      "total_runs": 5,
+      "wickets": 0
+    },
+    {
+      "over": 9,
+      "score_at_start": "74-4",
+      "balls": [
+        {
+          "ball": "9.1",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge goes on the back foot and whips it to deep backward square-leg."
+        },
+        {
+          "ball": "9.2",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly gets forward to drive and goes inside-out, wide of sweeper cover for two."
+        },
+        {
+          "ball": "9.3",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly sinks low to slogsweep and doesn't time it, straight to the fielder at deep mid-wicket."
+        },
+        {
+          "ball": "9.4",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge goes on the back foot to dab a flat googly to short third man."
+        },
+        {
+          "ball": "9.5",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge taps a googly to the right of short third man for one."
+        },
+        {
+          "ball": "9.6",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly cuts a flat good length ball straight to the fielder at backward point."
+        }
+      ],
+      "total_runs": 5,
+      "wickets": 0
+    },
+    {
+      "over": 10,
+      "score_at_start": "91-4",
+      "balls": [
+        {
+          "ball": "9.1",
+          "bowler": "Harsh Dubey",
+          "batsman": "Suryansh Shedge",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge flicks a good length delivery to deep mid-wicket for a single."
+        },
+        {
+          "ball": "9.2",
+          "bowler": "Harsh Dubey",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": "wide",
+          "wicket": null,
+          "commentary": "Harsh Dubey bowls a wide delivery outside off, missed by Cooper Connolly."
+        },
+        {
+          "ball": "9.2",
+          "bowler": "Harsh Dubey",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": "wide",
+          "wicket": null,
+          "commentary": "Harsh Dubey bowls another wide outside off, left alone by Cooper Connolly."
+        },
+        {
+          "ball": "9.2",
+          "bowler": "Harsh Dubey",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly punches a good length delivery to long-on for a single."
+        },
+        {
+          "ball": "9.3",
+          "bowler": "Harsh Dubey",
+          "batsman": "Suryansh Shedge",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge gets a single to deep mid-wicket off a full delivery."
+        },
+        {
+          "ball": "9.4",
+          "bowler": "Harsh Dubey",
+          "batsman": "Cooper Connolly",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly lofts a short delivery for a six to wide long-on."
+        },
+        {
+          "ball": "9.5",
+          "bowler": "Harsh Dubey",
+          "batsman": "Cooper Connolly",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly hits a full delivery for a consecutive six to long-off."
+        },
+        {
+          "ball": "9.6",
+          "bowler": "Harsh Dubey",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly misses a yorker length delivery outside off."
+        }
+      ],
+      "total_runs": 17,
+      "wickets": 0
+    },
+    {
+      "over": 11,
+      "score_at_start": "109-4",
+      "balls": [
+        {
+          "ball": "10.1",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge lofts a full googly over long-off for six."
+        },
+        {
+          "ball": "10.2",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge flat-bats a short googly for four, aided by a fielding error."
+        },
+        {
+          "ball": "10.3",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge cuts a wide delivery to sweeper cover for a single."
+        },
+        {
+          "ball": "10.4",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly drives a very full delivery to sweeper cover for a single."
+        },
+        {
+          "ball": "10.5",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge attempts a heave but Cummins fields it at mid-wicket."
+        },
+        {
+          "ball": "10.6",
+          "bowler": "Shivang Kumar",
+          "batsman": "Suryansh Shedge",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Suryansh Shedge flat-bats a dragged-down googly over the sightscreen for six."
+        }
+      ],
+      "total_runs": 18,
+      "wickets": 0
+    },
+    {
+      "over": 12,
+      "score_at_start": "114-5",
+      "balls": [
+        {
+          "ball": "11.1",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Full and angling into the right-hander on middle, Cooper Connolly gets forward to drive it back to Pat Cummins."
+        },
+        {
+          "ball": "11.2",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball and short of length outside off, Cooper Connolly gets forward and pulls to deep mid-wicket."
+        },
+        {
+          "ball": "11.3",
+          "bowler": "Pat Cummins",
+          "batsman": "Suryansh Shedge",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Full outside off, Suryansh Shedge shuffles across and drives it well but straight to the fielder at mid-off."
+        },
+        {
+          "ball": "11.4",
+          "bowler": "Pat Cummins",
+          "batsman": "Suryansh Shedge",
+          "runs": 0,
+          "is_wicket": true,
+          "extras": null,
+          "wicket": {
+            "type": "caught",
+            "fielder": "Abhishek Sharma",
+            "batsman_out": "Suryansh Shedge"
+          },
+          "commentary": "Slower-ball off-cutter, Shedge gets forward to pull, doesn't time it and holes out to deep mid-wicket."
+        },
+        {
+          "ball": "11.5",
+          "bowler": "Pat Cummins",
+          "batsman": "Shashank Singh",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Full outside off, Shashank Singh shuffles across and then creams the drive, in the air but wide of cover."
+        },
+        {
+          "ball": "11.6",
+          "bowler": "Pat Cummins",
+          "batsman": "Shashank Singh",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter and dug in short outside off, Shashank Singh slashes and misses, wanted to upper-cut that."
+        }
+      ],
+      "total_runs": 5,
+      "wickets": 1
+    },
+    {
+      "over": 13,
+      "score_at_start": "121-6",
+      "balls": [
+        {
+          "ball": "12.1",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly cuts a slower-ball off-cutter for four, wide of backward point."
+        },
+        {
+          "ball": "12.2",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly pushes a slower-ball off-cutter to extra-cover for a single."
+        },
+        {
+          "ball": "12.3",
+          "bowler": "Sakib Hussain",
+          "batsman": "Shashank Singh",
+          "runs": 0,
+          "is_wicket": true,
+          "extras": null,
+          "wicket": {
+            "type": "caught",
+            "fielder": "Nitish Reddy",
+            "batsman_out": "Shashank Singh"
+          },
+          "commentary": "Shashank Singh miscues a pull shot and is caught by Nitish Reddy at deep mid-wicket."
+        },
+        {
+          "ball": "12.4",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen punches a good length delivery to sweeper cover for a single."
+        },
+        {
+          "ball": "12.5",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly pushes a slower-ball off-cutter to extra-cover for a single."
+        },
+        {
+          "ball": "12.6",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marco Jansen",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen lets a slower-ball off-cutter go, it's inside the tramline."
+        }
+      ],
+      "total_runs": 7,
+      "wickets": 1
+    },
+    {
+      "over": 14,
+      "score_at_start": "126-6",
+      "balls": [
+        {
+          "ball": "14.1",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Dot ball, batsman defends."
+        },
+        {
+          "ball": "14.2",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Connolly hits it for two runs."
+        },
+        {
+          "ball": "14.3",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Another dot ball."
+        },
+        {
+          "ball": "14.4",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Connolly takes a single."
+        },
+        {
+          "ball": "14.5",
+          "bowler": "Eshan Malinga",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Jansen gets a single."
+        },
+        {
+          "ball": "14.6",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Connolly finishes the over with a single."
+        }
+      ],
+      "total_runs": 5,
+      "wickets": 0
+    },
+    {
+      "over": 15,
+      "score_at_start": "130-6",
+      "balls": [
+        {
+          "ball": "14.1",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Wicked slower-ball off-cutter grips and turns, squares Cooper Connolly up, takes outside-edge but drops short."
+        },
+        {
+          "ball": "14.2",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter on middle and off, Cooper Connolly pulls off the thick inside-edge to short fine."
+        },
+        {
+          "ball": "14.3",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter wide outside off, Marco Jansen miscues a loft, falls short of long-on."
+        },
+        {
+          "ball": "14.4",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter on leg-stump, Cooper Connolly top-edges a hoick, bowler drops the catch."
+        },
+        {
+          "ball": "14.5",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter down leg, Cooper Connolly swings early and misses, hit on the box."
+        },
+        {
+          "ball": "14.6",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter just outside off, Cooper Connolly misses a heave to leg."
+        }
+      ],
+      "total_runs": 4,
+      "wickets": 0
+    },
+    {
+      "over": 16,
+      "score_at_start": "142-6",
+      "balls": [
+        {
+          "ball": "16.1",
+          "bowler": "Pat Cummins",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen flicks a yorker for a single to deep mid-wicket."
+        },
+        {
+          "ball": "16.2",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly slams a slower-ball for a six into the 2nd-tier at deep mid-wicket."
+        },
+        {
+          "ball": "16.3",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly drives a full ball straight to long-off for a single."
+        },
+        {
+          "ball": "16.4",
+          "bowler": "Pat Cummins",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen pulls a slower-ball off-cutter for a single to deep mid-wicket."
+        },
+        {
+          "ball": "16.5",
+          "bowler": "Pat Cummins",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly digs out a yorker for a single to the off-side."
+        },
+        {
+          "ball": "16.6",
+          "bowler": "Pat Cummins",
+          "batsman": "Marco Jansen",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen flicks a full ball for 2 runs to deep mid-wicket."
+        }
+      ],
+      "total_runs": 12,
+      "wickets": 0
+    },
+    {
+      "over": 17,
+      "score_at_start": "158-6",
+      "balls": [
+        {
+          "ball": "17.1",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly top-edges a slog, Shivang drops the catch at deep mid-wicket, allowing a single."
+        },
+        {
+          "ball": "17.2",
+          "bowler": "Eshan Malinga",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen drives, the thick inside-edge goes to the vacant mid-wicket area."
+        },
+        {
+          "ball": "17.3",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly picks the slower-ball and slams it straight down the ground for a six."
+        },
+        {
+          "ball": "17.4",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly pulls flat and over deep mid-wicket for a six."
+        },
+        {
+          "ball": "17.5",
+          "bowler": "Eshan Malinga",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly gets forward to drive and mistimes it down to long-on."
+        },
+        {
+          "ball": "17.6",
+          "bowler": "Eshan Malinga",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen gets forward to pull, off the thick inside-edge to deep mid-wicket."
+        }
+      ],
+      "total_runs": 16,
+      "wickets": 0
+    },
+    {
+      "over": 18,
+      "score_at_start": "168-6",
+      "balls": [
+        {
+          "ball": "18.1",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": "wide",
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter, well wide outside off, left alone."
+        },
+        {
+          "ball": "18.1",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Low full-toss, Marco Jansen drives for a single to long-on."
+        },
+        {
+          "ball": "18.2",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter, Cooper Connolly pulls for two runs to deep mid-wicket."
+        },
+        {
+          "ball": "18.3",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter, Cooper Connolly drives for a single that bursts through the bowler's hands."
+        },
+        {
+          "ball": "18.4",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marco Jansen",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Short delivery on the stumps, Marco Jansen ducks."
+        },
+        {
+          "ball": "18.5",
+          "bowler": "Sakib Hussain",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Slower-ball off-cutter, Marco Jansen swings for a single to deep mid-wicket."
+        },
+        {
+          "ball": "18.6",
+          "bowler": "Sakib Hussain",
+          "batsman": "Cooper Connolly",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Thick outside-edge for four runs through the vacant slip cordon."
+        }
+      ],
+      "total_runs": 10,
+      "wickets": 0
+    },
+    {
+      "over": 19,
+      "score_at_start": "187-6",
+      "balls": [
+        {
+          "ball": "18.1",
+          "bowler": "Harsh Dubey",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen mistimes a pull to deep mid-wicket for a single."
+        },
+        {
+          "ball": "18.2",
+          "bowler": "Harsh Dubey",
+          "batsman": "Cooper Connolly",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly gets a thick inside-edge for FOUR to deep backward square-leg."
+        },
+        {
+          "ball": "18.3",
+          "bowler": "Harsh Dubey",
+          "batsman": "Cooper Connolly",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly drives a full delivery hard to long-on for a single."
+        },
+        {
+          "ball": "18.4",
+          "bowler": "Harsh Dubey",
+          "batsman": "Marco Jansen",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen lofts a length delivery for SIX, just clearing long-off."
+        },
+        {
+          "ball": "18.5",
+          "bowler": "Harsh Dubey",
+          "batsman": "Marco Jansen",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Marco Jansen forces a flat length delivery to long-off for a single."
+        },
+        {
+          "ball": "18.6",
+          "bowler": "Harsh Dubey",
+          "batsman": "Cooper Connolly",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly hits a SIX, clearing long-on, moving into the 90s."
+        }
+      ],
+      "total_runs": 19,
+      "wickets": 0
+    },
+    {
+      "over": 20,
+      "score_at_start": "202-7",
+      "balls": [
+        {
+          "ball": "19.1",
+          "bowler": "Shivang Kumar",
+          "batsman": "Marco Jansen",
+          "runs": 0,
+          "is_wicket": true,
+          "extras": null,
+          "wicket": {
+            "type": "caught",
+            "fielder": "Harsh Dubey",
+            "batsman_out": "Marco Jansen"
+          },
+          "commentary": "Marco Jansen is caught by Harsh Dubey off Shivang Kumar."
+        },
+        {
+          "ball": "19.2",
+          "bowler": "Shivang Kumar",
+          "batsman": "Vijaykumar Vyshak",
+          "runs": 1,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Vijaykumar Vyshak dabs a googly for a single."
+        },
+        {
+          "ball": "19.3",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 2,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly whips the ball to deep mid-wicket for two runs."
+        },
+        {
+          "ball": "19.4",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": "wide",
+          "wicket": null,
+          "commentary": "Shivang Kumar bowls a wide outside off."
+        },
+        {
+          "ball": "19.4",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 4,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly hits a falling sweep for four, reaching his first IPL ton."
+        },
+        {
+          "ball": "19.5",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": "wide",
+          "wicket": null,
+          "commentary": "Shivang Kumar bowls another wide outside off."
+        },
+        {
+          "ball": "19.5",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 6,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly backs away and powers a flat-batted shot for a six."
+        },
+        {
+          "ball": "19.6",
+          "bowler": "Shivang Kumar",
+          "batsman": "Cooper Connolly",
+          "runs": 0,
+          "is_wicket": false,
+          "extras": null,
+          "wicket": null,
+          "commentary": "Cooper Connolly fails to connect with a slogsweep, ending the game."
+        }
+      ],
+      "total_runs": 15,
+      "wickets": 1
+    }
+  ],
+  "metadata": {
+    "parsedAt": "2026-05-07T02:47:36.384Z",
+    "parser": "gemini-2.5-flash",
+    "sourceFile": "Commentary.txt",
+    "totalBalls": 129,
+    "totalRuns": 202,
+    "totalWickets": 7
+  }
+}
