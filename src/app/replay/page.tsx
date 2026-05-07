@@ -7,6 +7,9 @@ import { ScoreBar } from '@/components/ScoreBar';
 import { DecisionCard } from '@/components/DecisionCard';
 import { ReplayControls } from '@/components/ReplayControls';
 import { ReplayCommentary } from '@/components/ReplayCommentary';
+import { CaptainDecisionCard } from '@/components/CaptainDecisionCard';
+import { CaptainsLog } from '@/components/CaptainsLog';
+import { tacticalMomentsDB } from '@/lib/tactical-moments';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -34,6 +37,8 @@ export default function ReplayPage() {
     const [showDecision, setShowDecision] = useState(false);
     const [currentScore, setCurrentScore] = useState<any>(null);
     const [replayComplete, setReplayComplete] = useState(false);
+    const [captainDecisions, setCaptainDecisions] = useState<any[]>([]);
+    const [currentTacticalMoment, setCurrentTacticalMoment] = useState<any>(null);
 
     // Get current ball data
     const currentBall = currentBallIndex >= 0 ? allBalls[currentBallIndex] : null;
@@ -72,8 +77,18 @@ export default function ReplayPage() {
 
         setCommentaryHistory(prev => [entry, ...prev].slice(0, 20)); // Keep last 20 balls
 
+        // Check if this is a tactical moment from our database
+        const ballParts = ball.ball.split('.');
+        const ballNumber = ballParts[1];
+        const overNumber = parseInt(ballParts[0]);
+
+        const tacticalMoment = tacticalMomentsDB.find(
+            (tm) => tm.over === overNumber && tm.ball === ballNumber
+        );
+
         // Show decision card for tactical moments
-        if (ball.is_wicket || ball.runs >= 4) {
+        if (tacticalMoment) {
+            setCurrentTacticalMoment(tacticalMoment);
             setShowDecision(true);
             setIsPlaying(false); // Pause for decision
         }
@@ -93,7 +108,25 @@ export default function ReplayPage() {
     // Continue after decision
     const handleDecisionSubmit = (decision: any) => {
         console.log('Decision made:', decision);
+
+        // Add to captain's log
+        if (currentTacticalMoment) {
+            const selectedOption = currentTacticalMoment.options.find(
+                (opt: any) => opt.id === decision.choice
+            );
+
+            setCaptainDecisions(prev => [...prev, {
+                over: currentTacticalMoment.over,
+                ball: currentTacticalMoment.ball,
+                situation: currentTacticalMoment.situation,
+                userChoice: selectedOption?.label || 'Unknown',
+                score: decision.score,
+                actualDecision: currentTacticalMoment.actualDecision.what,
+            }]);
+        }
+
         setShowDecision(false);
+        setCurrentTacticalMoment(null);
         // Auto-resume after decision
         setTimeout(() => setIsPlaying(true), 500);
     };
@@ -223,11 +256,14 @@ export default function ReplayPage() {
 
                     {/* Decision Card / Tactical Info */}
                     <div>
-                        {showDecision && currentBall && mockMatchState ? (
-                            <DecisionCard
-                                matchState={mockMatchState}
-                                decisionType={currentBall.is_wicket ? 'bowling_change' : 'field_placement'}
-                                overNumber={over}
+                        {showDecision && currentTacticalMoment ? (
+                            <CaptainDecisionCard
+                                overNumber={currentTacticalMoment.over}
+                                ballNumber={currentTacticalMoment.ball}
+                                situation={currentTacticalMoment.situation}
+                                context={currentTacticalMoment.context}
+                                options={currentTacticalMoment.options}
+                                actualDecision={currentTacticalMoment.actualDecision}
                                 onSubmit={handleDecisionSubmit}
                             />
                         ) : replayComplete ? (
@@ -245,17 +281,13 @@ export default function ReplayPage() {
                                 </Button>
                             </Card>
                         ) : (
-                            <Card className="bg-zinc-900 border-zinc-800 p-6">
-                                <h3 className="text-lg font-bold text-white mb-3">Tactical Moments</h3>
-                                <p className="text-sm text-zinc-400">
-                                    Decision points will appear here when:
-                                </p>
-                                <ul className="text-sm text-zinc-400 mt-2 space-y-1">
-                                    <li>• A wicket falls</li>
-                                    <li>• A boundary is hit (4 or 6)</li>
-                                    <li>• High-scoring over (15+ runs)</li>
-                                </ul>
-                            </Card>
+                            <CaptainsLog
+                                decisions={captainDecisions}
+                                totalScore={captainDecisions.length > 0
+                                    ? Math.round(captainDecisions.reduce((sum, d) => sum + d.score, 0) / captainDecisions.length)
+                                    : 0
+                                }
+                            />
                         )}
                     </div>
                 </div>
