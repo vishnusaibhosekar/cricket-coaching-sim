@@ -1,5 +1,6 @@
 // Tactical moments from the actual SRH vs PBKS match
 // These are the key decision points where Pat Cummins had to make captaincy choices
+// SRH 2026 Bowlers: Pat Cummins, Nitish Reddy, Eshan Malinga, Sakib Hussain, Shivang Kumar, Harsh Dubey
 
 export interface TacticalMoment {
     over: number;
@@ -47,7 +48,7 @@ export const tacticalMomentsDB: TacticalMoment[] = [
             },
             {
                 id: 'bring_spin',
-                label: 'Bring in a spinner',
+                label: 'Bring in Harsh Dubey (spinner)',
                 description: 'Mix it up early, don\'t let batsmen settle',
             },
             {
@@ -68,15 +69,15 @@ export const tacticalMomentsDB: TacticalMoment[] = [
         context: {
             score: '37-3',
             batsman: 'New batsman',
-            bowler: 'Jaydev Unadkat',
+            bowler: 'Eshan Malinga',
             bowlerFigures: '(2.2-0-18-2)',
             matchPhase: 'powerplay',
             recentOvers: '4, 6, W, 1, 4',
         },
         options: [
             {
-                id: 'continue_unadkat',
-                label: 'Let Unadkat finish the over',
+                id: 'continue_malinga',
+                label: 'Let Malinga finish the over',
                 description: 'He\'s in great rhythm with 2 wickets already',
             },
             {
@@ -91,8 +92,8 @@ export const tacticalMomentsDB: TacticalMoment[] = [
             },
         ],
         actualDecision: {
-            what: 'Continued with Unadkat',
-            outcome: 'Unadkat finished with 2/31 in powerplay. Good containment but expensive.',
+            what: 'Continued with Malinga',
+            outcome: 'Malinga finished with 2/31 in powerplay. Good containment but expensive.',
         },
     },
     {
@@ -115,9 +116,9 @@ export const tacticalMomentsDB: TacticalMoment[] = [
                 description: 'He\'s got Stoinis\' wicket, keep the momentum',
             },
             {
-                id: 'bring_bhuvi',
-                label: 'Introduce Bhuvneshwar Kumar',
-                description: 'Experienced head, good for middle overs containment',
+                id: 'bring_sakib',
+                label: 'Introduce Sakib Hussain',
+                description: 'Left-arm pace angle, good variation to confuse the new batsman',
             },
             {
                 id: 'attacking_field',
@@ -126,8 +127,8 @@ export const tacticalMomentsDB: TacticalMoment[] = [
             },
         ],
         actualDecision: {
-            what: 'Brought in Bhuvneshwar Kumar',
-            outcome: 'Bhuvneshwar conceded 12 runs in his over but didn\'t get a wicket.',
+            what: 'Brought in Sakib Hussain',
+            outcome: 'Sakib conceded 12 runs in his over but didn\'t get a wicket.',
         },
     },
     {
@@ -138,30 +139,30 @@ export const tacticalMomentsDB: TacticalMoment[] = [
             score: '118-5',
             batsman: 'Shashank Singh',
             batsmanRuns: 28,
-            bowler: 'Harshal Patel',
-            bowlerFigures: '(3.4-0-42-1)',
+            bowler: 'Pat Cummins',
+            bowlerFigures: '(7.4-0-52-3)',
             matchPhase: 'middle',
             recentOvers: '11, 8, 13, 6, W',
         },
         options: [
             {
-                id: 'continue_harshal',
-                label: 'Continue with Harshal',
+                id: 'continue_cummins',
+                label: 'Continue with Cummins',
                 description: 'He broke the partnership, let him continue',
             },
             {
-                id: 'bring_cummins_death',
-                label: 'Bring Cummins for double spell',
-                description: 'Save your best for the death overs',
+                id: 'bring_malinga',
+                label: 'Bring in Eshan Malinga',
+                description: 'Young pace bowler with raw speed, good for surprise',
             },
             {
                 id: 'try_spinner',
-                label: 'Try a spinner',
+                label: 'Try Harsh Dubey (spinner)',
                 description: 'Change of pace might disrupt the new batsman',
             },
         ],
         actualDecision: {
-            what: 'Continued with Harshal, then brought Cummins back at over 16',
+            what: 'Continued with Cummins, saved him for a double spell at over 16',
             outcome: 'Connolly was already on 45* and accelerating. The delay in bringing Cummins back proved costly.',
         },
     },
