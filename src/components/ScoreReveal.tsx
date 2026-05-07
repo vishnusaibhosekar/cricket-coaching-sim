@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { GeminiScore } from '@/lib/types';
 import { toast } from 'sonner';
@@ -64,20 +63,20 @@ export function ScoreReveal({ score, decisionType }: ScoreRevealProps) {
     };
 
     return (
-        <Card className="p-6 bg-zinc-900 border-zinc-800">
-            <div className="text-center mb-6">
-                <Badge className="mb-4 bg-blue-500">
+        <Card className="p-5 bg-zinc-900/90 border-zinc-700/50">
+            {/* Score Header */}
+            <div className="text-center mb-5 pb-4 border-b border-zinc-700/50">
+                <p className="text-xs text-zinc-500 uppercase tracking-wider mb-2">
                     {decisionType === 'bowling_change' ? 'Bowling Change' : 'Field Placement'}
-                </Badge>
-                <h3 className="text-4xl font-bold text-white mb-2">
-                    Tactical Score
-                </h3>
-                <p className={`text-6xl font-bold ${getScoreColor(score.total_score)} transition-all duration-300`}>
-                    {animatedScore}/100
                 </p>
+                <p className={`text-5xl font-bold ${getScoreColor(score.total_score)}`}>
+                    {animatedScore}
+                </p>
+                <p className="text-zinc-500 text-sm">out of 100</p>
             </div>
 
-            <div className="space-y-4 mb-6">
+            {/* Score Breakdown */}
+            <div className="space-y-3 mb-5">
                 <ScoreDimension
                     label="Situation Awareness"
                     score={score.situation_awareness}
@@ -91,7 +90,7 @@ export function ScoreReveal({ score, decisionType }: ScoreRevealProps) {
                     color={getProgressBarColor(score.matchup_intelligence * 4)}
                 />
                 <ScoreDimension
-                    label="Risk-Reward Calibration"
+                    label="Risk-Reward"
                     score={score.risk_reward}
                     maxScore={25}
                     color={getProgressBarColor(score.risk_reward * 4)}
@@ -104,23 +103,25 @@ export function ScoreReveal({ score, decisionType }: ScoreRevealProps) {
                 />
             </div>
 
-            <div className="p-4 bg-zinc-800 rounded-lg mb-4">
-                <p className="text-zinc-300">{score.explanation}</p>
-            </div>
-
-            <div className="p-4 bg-zinc-800 rounded-lg mb-4">
-                <p className="text-sm text-zinc-400">
-                    <span className="font-semibold">Captain's Choice:</span> {score.comparison_to_captain}
+            {/* Comparison */}
+            <div className="bg-zinc-800/50 rounded-lg p-3 mb-4">
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                    {score.explanation}
                 </p>
             </div>
 
-            {/* Stage 4: Share button */}
+            <div className="bg-zinc-800/50 rounded-lg p-3 mb-4">
+                <p className="text-xs text-zinc-500">
+                    <span className="text-zinc-400 font-medium">Captain's call:</span> {score.comparison_to_captain}
+                </p>
+            </div>
+
             <Button
                 onClick={handleShare}
-                className="w-full mt-4"
+                className="w-full"
                 variant={copied ? "secondary" : "default"}
             >
-                {copied ? '✓ Copied!' : 'Share Your Score'}
+                {copied ? '✓ Copied!' : 'Share Score'}
             </Button>
         </Card>
     );

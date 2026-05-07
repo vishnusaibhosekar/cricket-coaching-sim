@@ -151,6 +151,7 @@ export function DecisionCard({ matchState, decisionType, overNumber, onSubmit, i
                 </div>
             ) : (
                 <FieldMap
+                    matchPhase={matchState.matchPhase}
                     onSubmit={handleFieldSubmit}
                 />
             )}

@@ -10,6 +10,7 @@ interface FieldMapProps {
     onSubmit: (placement: UserFieldPlacement) => void;
     disabled?: boolean;
     maxFielders?: number;
+    matchPhase?: 'powerplay' | 'middle' | 'death';
     showActualZone?: FieldPosition;
 }
 
@@ -48,28 +49,54 @@ const FIELD_ZONES: { id: FieldPosition; label: string; x: number; y: number; reg
     { id: 'third_man', label: 'Third Man', x: -55, y: -60, region: 'deep' },
 ];
 
-export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActualZone }: FieldMapProps) {
+export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, matchPhase = 'middle', showActualZone }: FieldMapProps) {
     const [fielders, setFielders] = useState<Record<FieldPosition, number>>(
         FIELD_ZONES.reduce((acc, zone) => ({ ...acc, [zone.id]: 0 }), {} as Record<FieldPosition, number>)
     );
 
     const totalFielders = Object.values(fielders).reduce((sum, count) => sum + count, 0);
+    const deepFielders = Object.entries(fielders)
+        .filter(([zoneId]) => FIELD_ZONES.find(z => z.id === zoneId)?.region === 'deep')
+        .reduce((sum, [_, count]) => sum + count, 0);
+
+    const MAX_DEEP_IN_POWERPLAY = 2;
+    const isPowerplay = matchPhase === 'powerplay';
+    const deepLimitReached = isPowerplay && deepFielders >= MAX_DEEP_IN_POWERPLAY;
 
     const handleZoneClick = useCallback((zoneId: FieldPosition) => {
         if (disabled) return;
 
+        const zone = FIELD_ZONES.find(z => z.id === zoneId);
+        if (!zone) return;
+
         setFielders(prev => {
             const current = prev[zoneId] || 0;
 
-            // Toggle: if zone has fielders, remove one; if not and we have capacity, add one
+            // Can't have more than 1 fielder per zone
             if (current > 0) {
+                // Toggle off if already placed
                 return { ...prev, [zoneId]: current - 1 };
-            } else if (totalFielders < maxFielders) {
-                return { ...prev, [zoneId]: 1 };
             }
-            return prev;
+
+            // Check total capacity
+            const currentTotal = Object.values(prev).reduce((sum, c) => sum + c, 0);
+            if (currentTotal >= maxFielders) {
+                return prev;
+            }
+
+            // Powerplay: max 2 deep fielders
+            if (isPowerplay && zone.region === 'deep') {
+                const currentDeep = Object.entries(prev)
+                    .filter(([id]) => FIELD_ZONES.find(z => z.id === id)?.region === 'deep')
+                    .reduce((sum, [_, c]) => sum + c, 0);
+                if (currentDeep >= MAX_DEEP_IN_POWERPLAY) {
+                    return prev; // Can't add more deep fielders
+                }
+            }
+
+            return { ...prev, [zoneId]: 1 };
         });
-    }, [disabled, maxFielders, totalFielders]);
+    }, [disabled, maxFielders, isPowerplay]);
 
     const handleSubmit = () => {
         if (totalFielders !== maxFielders) return;
@@ -82,13 +109,23 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
 
     const isComplete = totalFielders === maxFielders;
 
+    // Powerplay: max 2 deep fielders
+    const deepRemaining = isPowerplay ? MAX_DEEP_IN_POWERPLAY - deepFielders : undefined;
+
     return (
-        <Card className="p-6 bg-zinc-900 border-zinc-800">
-            <div className="mb-4 flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-white">Set Field Placement</h3>
-                <Badge variant={isComplete ? 'default' : 'destructive'}>
-                    {totalFielders}/{maxFielders} fielders placed
-                </Badge>
+        <Card className="p-5 bg-zinc-900/90 border-zinc-700/50">
+            <div className="mb-3 flex items-center justify-between">
+                <h3 className="text-base font-semibold text-white">Set Field Placement</h3>
+                <div className="flex items-center gap-2">
+                    {isPowerplay && (
+                        <span className="text-xs text-yellow-500">
+                            Max 2 deep
+                        </span>
+                    )}
+                    <Badge variant={isComplete ? 'default' : 'destructive'} className="text-xs">
+                        {totalFielders}/{maxFielders}
+                    </Badge>
+                </div>
             </div>
 
             {/* Cricket Field SVG */}
@@ -146,6 +183,7 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
                     {FIELD_ZONES.map((zone) => {
                         const hasFielder = (fielders[zone.id] || 0) > 0;
                         const isActualZone = zone.id === showActualZone;
+                        const isDeepDisabled = zone.region === 'deep' && deepLimitReached && !hasFielder;
                         // Convert relative coords to SVG coords: center at (100,100), scale by 1.0
                         const svgX = 100 + zone.x;
                         const svgY = 100 + zone.y;
@@ -162,12 +200,15 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
                                             ? '#ef4444' // Red for actual shot zone
                                             : hasFielder
                                                 ? '#3b82f6' // Blue for user placement
-                                                : '#52525b' // Gray for empty
+                                                : isDeepDisabled
+                                                    ? '#3f3f46' // Darker gray when disabled in powerplay
+                                                    : '#52525b' // Gray for empty
                                     }
-                                    stroke={hasFielder ? '#60a5fa' : '#71717a'}
+                                    stroke={hasFielder ? '#60a5fa' : isDeepDisabled ? '#52525b' : '#71717a'}
                                     strokeWidth="0.5"
-                                    className="cursor-pointer transition-all duration-200 hover:opacity-80"
-                                    onClick={() => handleZoneClick(zone.id)}
+                                    opacity={isDeepDisabled ? 0.5 : 1}
+                                    className={!isDeepDisabled ? "cursor-pointer transition-all duration-200 hover:opacity-80" : ""}
+                                    onClick={!isDeepDisabled ? () => handleZoneClick(zone.id) : undefined}
                                 />
 
                                 {/* Fielder count */}
