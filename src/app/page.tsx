@@ -11,6 +11,10 @@ export default function Home() {
     router.push('/game');
   };
 
+  const handleWatchReplay = () => {
+    router.push('/replay');
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950">
       <Card className="max-w-2xl w-full mx-4 p-8 bg-zinc-900 border-zinc-800 text-center">
@@ -47,15 +51,26 @@ export default function Home() {
           </ul>
         </div>
 
-        <Button
-          onClick={handleStartDemo}
-          size="lg"
-          className="w-full text-lg py-6"
-        >
-          Start Demo
-        </Button>
+        <div className="space-y-4 mb-8">
+          <Button
+            onClick={handleStartDemo}
+            size="lg"
+            className="w-full text-lg py-6"
+          >
+            Start Demo
+          </Button>
 
-        <p className="text-sm text-zinc-500 mt-4">
+          <Button
+            onClick={handleWatchReplay}
+            variant="outline"
+            size="lg"
+            className="w-full text-lg py-6 border-zinc-700 hover:bg-zinc-800"
+          >
+            🎬 Watch SRH vs PBKS Replay
+          </Button>
+        </div>
+
+        <p className="text-sm text-zinc-500 mt-6">
           Powered by Google Cloud • Built for Agentic Premier League
         </p>
       </Card>
