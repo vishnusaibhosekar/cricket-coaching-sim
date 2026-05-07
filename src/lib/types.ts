@@ -131,19 +131,21 @@ export interface TacticalMoment {
 }
 
 // Ball-by-ball field placement simulation
-export type ShotZone = 
+export type FieldPosition =
     // Close catching positions
     | 'short_leg' | 'silly_point' | 'leg_slip' | 'slip_gully'
     // Inner circle positions
-    | 'point' | 'backward_point' | 'cover' | 'extra_cover' 
-    | 'mid_off' | 'mid_on' | 'midwicket' | 'square_leg' 
+    | 'point' | 'backward_point' | 'cover' | 'extra_cover'
+    | 'mid_off' | 'mid_on' | 'midwicket' | 'square_leg'
     | 'short_fine_leg' | 'fine_leg' | 'third_man'
     // Deep positions
     | 'deep_cover' | 'deep_extra_cover' | 'deep_point' | 'deep_backward_point'
     | 'deep_midwicket' | 'deep_square_leg' | 'long_on' | 'long_off'
-    | 'deep_third_man'
+    | 'deep_third_man' | 'long_leg'
     // Special
     | 'boundary_rope' | 'no_shot';
+
+export type ShotZone = FieldPosition;
 
 export interface BallData {
     ball: string; // e.g., "3.4"
@@ -159,12 +161,12 @@ export interface BallData {
         batsman_out: string;
     } | null;
     shot_type: string;
-    shot_zone: ShotZone;
+    shot_zone: FieldPosition;
     commentary: string;
 }
 
 export interface UserFieldPlacement {
-    zones: Record<ShotZone, number>; // zone -> number of fielders (0-2)
+    zones: Record<FieldPosition, number>; // zone -> number of fielders (0-2)
     total_fielders: number; // Should be 9
 }
 

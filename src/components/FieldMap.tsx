@@ -4,56 +4,54 @@ import { useState, useCallback } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ShotZone, UserFieldPlacement } from '@/lib/types';
+import { FieldPosition, UserFieldPlacement } from '@/lib/types';
 
 interface FieldMapProps {
     onSubmit: (placement: UserFieldPlacement) => void;
     disabled?: boolean;
     maxFielders?: number;
-    showActualZone?: ShotZone;
+    showActualZone?: FieldPosition;
 }
 
-// Field zones mapped to cricket positions (26 zones total)
-const FIELD_ZONES: { id: ShotZone; label: string; x: number; y: number; region: 'close' | 'inner' | 'deep' }[] = [
-    // Close catching positions (near the pitch)
-    { id: 'short_leg', label: 'Short Leg', x: 60, y: 45, region: 'close' },
-    { id: 'silly_point', label: 'Silly Point', x: 40, y: 45, region: 'close' },
-    { id: 'leg_slip', label: 'Leg Slip', x: 62, y: 30, region: 'close' },
-    { id: 'slip_gully', label: 'Slip/Gully', x: 55, y: 22, region: 'close' },
+// Field zones mapped to cricket positions (26 zones total) - x-axis inverted, y-axis corrected
+// Off side (batsman's right) is on RIGHT in SVG, Leg side (batsman's left) is on LEFT in SVG
+// Behind batsman (towards non-striker's end) = TOP of SVG (y < 100)
+const FIELD_ZONES: { id: FieldPosition; label: string; x: number; y: number; region: 'inner' | 'deep' }[] = [
 
-    // Inner circle positions
-    { id: 'point', label: 'Point', x: 30, y: 40, region: 'inner' },
-    { id: 'backward_point', label: 'Backward Point', x: 28, y: 50, region: 'inner' },
-    { id: 'cover', label: 'Cover', x: 38, y: 30, region: 'inner' },
-    { id: 'extra_cover', label: 'Extra Cover', x: 44, y: 25, region: 'inner' },
-    { id: 'mid_off', label: 'Mid-Off', x: 48, y: 20, region: 'inner' },
-    { id: 'mid_on', label: 'Mid-On', x: 52, y: 20, region: 'inner' },
-    { id: 'midwicket', label: 'Midwicket', x: 62, y: 35, region: 'inner' },
-    { id: 'square_leg', label: 'Square Leg', x: 72, y: 42, region: 'inner' },
-    { id: 'short_fine_leg', label: 'Short Fine Leg', x: 78, y: 55, region: 'inner' },
-    { id: 'fine_leg', label: 'Fine Leg', x: 82, y: 52, region: 'inner' },
-    { id: 'third_man', label: 'Third Man', x: 50, y: 78, region: 'inner' },
+    // Inner circle positions - x-axis inverted, y-axis corrected
+    { id: 'third_man', label: 'Third Man', x: 44, y: 40, region: 'inner' },
+    { id: 'fine_leg', label: 'Fine Leg', x: 44, y: 156, region: 'inner' },
+    { id: 'short_fine_leg', label: 'Short Fine Leg', x: 64, y: 76, region: 'inner' },
+    { id: 'square_leg', label: 'Square Leg', x: 56, y: 100, region: 'inner' },
+    { id: 'midwicket', label: 'Midwicket', x: 76, y: 44, region: 'inner' },
+    { id: 'mid_on', label: 'Mid-On', x: 90, y: 156, region: 'inner' },
+    { id: 'mid_off', label: 'Mid-Off', x: 110, y: 156, region: 'inner' },
+    { id: 'extra_cover', label: 'Extra Cover', x: 74, y: 144, region: 'inner' },
+    { id: 'cover', label: 'Cover', x: 60, y: 124, region: 'inner' },
+    { id: 'backward_point', label: 'Backward Point', x: 150, y: 80, region: 'inner' },
+    { id: 'point', label: 'Point', x: 144, y: 100, region: 'inner' },
 
-    // Deep positions (outer ring)
-    { id: 'deep_cover', label: 'Deep Cover', x: 25, y: 15, region: 'deep' },
-    { id: 'deep_extra_cover', label: 'Deep Extra Cover', x: 35, y: 8, region: 'deep' },
-    { id: 'deep_point', label: 'Deep Point', x: 15, y: 30, region: 'deep' },
-    { id: 'deep_backward_point', label: 'Deep Bwd Point', x: 18, y: 55, region: 'deep' },
-    { id: 'deep_midwicket', label: 'Deep Midwicket', x: 75, y: 12, region: 'deep' },
-    { id: 'deep_square_leg', label: 'Deep Sq Leg', x: 88, y: 30, region: 'deep' },
-    { id: 'long_on', label: 'Long On', x: 52, y: 5, region: 'deep' },
-    { id: 'long_off', label: 'Long Off', x: 48, y: 5, region: 'deep' },
-    { id: 'deep_third_man', label: 'Deep 3rd Man', x: 50, y: 95, region: 'deep' },
+    // Deep positions - x-axis inverted, y-axis corrected
+    { id: 'deep_third_man', label: 'Deep 3rd Man', x: 24, y: 10, region: 'deep' },
+    { id: 'long_leg', label: 'Long Leg', x: 30, y: 60, region: 'deep' },
+    { id: 'deep_square_leg', label: 'Deep Sq Leg', x: 24, y: 100, region: 'deep' },
+    { id: 'deep_midwicket', label: 'Deep Midwicket', x: 60, y: 170, region: 'deep' },
+    { id: 'long_on', label: 'Long On', x: 90, y: 190, region: 'deep' },
+    { id: 'long_off', label: 'Long Off', x: 110, y: 190, region: 'deep' },
+    { id: 'deep_extra_cover', label: 'Deep Extra Cover', x: 140, y: 170, region: 'deep' },
+    { id: 'deep_cover', label: 'Deep Cover', x: 164, y: 140, region: 'deep' },
+    { id: 'deep_backward_point', label: 'Deep Bwd Point', x: 170, y: 70, region: 'deep' },
+    { id: 'deep_point', label: 'Deep Point', x: 176, y: 100, region: 'deep' },
 ];
 
 export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActualZone }: FieldMapProps) {
-    const [fielders, setFielders] = useState<Record<ShotZone, number>>(
-        FIELD_ZONES.reduce((acc, zone) => ({ ...acc, [zone.id]: 0 }), {} as Record<ShotZone, number>)
+    const [fielders, setFielders] = useState<Record<FieldPosition, number>>(
+        FIELD_ZONES.reduce((acc, zone) => ({ ...acc, [zone.id]: 0 }), {} as Record<FieldPosition, number>)
     );
 
     const totalFielders = Object.values(fielders).reduce((sum, count) => sum + count, 0);
 
-    const handleZoneClick = useCallback((zoneId: ShotZone) => {
+    const handleZoneClick = useCallback((zoneId: FieldPosition) => {
         if (disabled) return;
 
         setFielders(prev => {
@@ -90,46 +88,55 @@ export function FieldMap({ onSubmit, disabled = false, maxFielders = 9, showActu
             </div>
 
             {/* Cricket Field SVG */}
-            <div className="relative w-full aspect-square max-w-md mx-auto mb-4">
-                <svg viewBox="0 0 100 100" className="w-full h-full">
+            <div className="relative w-full aspect-square max-w-2xl mx-auto mb-4">
+                <svg viewBox="0 0 200 200" className="w-full h-full">
                     {/* Field boundary */}
                     <ellipse
-                        cx="50"
-                        cy="50"
-                        rx="48"
-                        ry="48"
+                        cx="100"
+                        cy="100"
+                        rx="95"
+                        ry="95"
                         fill="none"
                         stroke="#4ade80"
-                        strokeWidth="0.5"
-                        strokeDasharray="2,2"
+                        strokeWidth="1"
+                        strokeDasharray="4,4"
                     />
 
                     {/* 30-yard circle */}
                     <ellipse
-                        cx="50"
-                        cy="50"
-                        rx="25"
-                        ry="25"
+                        cx="100"
+                        cy="100"
+                        rx="50"
+                        ry="50"
                         fill="none"
                         stroke="#fbbf24"
-                        strokeWidth="0.3"
-                        strokeDasharray="1,1"
+                        strokeWidth="0.6"
+                        strokeDasharray="2,2"
                     />
 
                     {/* Pitch */}
                     <rect
-                        x="48"
-                        y="20"
+                        x="98"
+                        y="55"
                         width="4"
-                        height="60"
+                        height="90"
                         fill="#d4d4d8"
                         stroke="#a1a1aa"
-                        strokeWidth="0.3"
+                        strokeWidth="0.5"
                     />
 
-                    {/* Wickets */}
-                    <circle cx="50" cy="20" r="1" fill="#ef4444" />
-                    <circle cx="50" cy="80" r="1" fill="#ef4444" />
+                    {/* Batsman at striker's end */}
+                    <g transform="translate(100, 55)">
+                        <circle cx="0" cy="-3" r="2.5" fill="#fbbf24" />
+                        <rect x="-1.5" y="-1.5" width="3" height="4" fill="#fbbf24" rx="0.8" />
+                        <line x1="0" y1="0" x2="4" y2="4" stroke="#fbbf24" strokeWidth="1" />
+                    </g>
+
+                    {/* Bowler at bowler's end */}
+                    <g transform="translate(100, 145)">
+                        <circle cx="0" cy="-1.5" r="2" fill="#a1a1aa" />
+                        <rect x="-1" y="-1" width="2" height="3" fill="#a1a1aa" rx="0.5" />
+                    </g>
 
                     {/* Field zones */}
                     {FIELD_ZONES.map((zone) => {
