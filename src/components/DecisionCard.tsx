@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { MatchState, BowlingChoice, FieldPlacementChoice } from '@/lib/types';
+import { MatchState, BowlingChoice, FieldPlacementChoice, UserFieldPlacement } from '@/lib/types';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -61,7 +61,12 @@ export function DecisionCard({ matchState, decisionType, overNumber, onSubmit, i
         setSubmitted(true);
     };
 
-    const handleFieldSubmit = (zones: Array<{ zone: string; fielders: number }>) => {
+    const handleFieldSubmit = (placement: UserFieldPlacement) => {
+        // Convert UserFieldPlacement to the format expected by FieldPlacementChoice
+        const zones = Object.entries(placement.zones)
+            .filter(([_, count]) => count > 0)
+            .map(([zone, fielders]) => ({ zone, fielders }));
+
         const decision: FieldPlacementChoice = {
             zones,
         };
@@ -146,7 +151,6 @@ export function DecisionCard({ matchState, decisionType, overNumber, onSubmit, i
                 </div>
             ) : (
                 <FieldMap
-                    matchPhase={matchState.matchPhase}
                     onSubmit={handleFieldSubmit}
                 />
             )}
