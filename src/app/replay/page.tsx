@@ -241,9 +241,9 @@ export default function ReplayPage() {
                 />
 
                 {/* Main Content */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="space-y-6">
                     {/* Commentary / Decision Card */}
-                    <div className="lg:col-span-2">
+                    <div>
                         {showDecision && currentBall ? (
                             <BallDecisionCard
                                 key={`ball-${currentBallIndex}-${getMatchPhase()}`}
@@ -296,7 +296,7 @@ export default function ReplayPage() {
                         )}
                     </div>
 
-                    {/* Sidebar - Captain's Log */}
+                    {/* Captain's Log - Full Width */}
                     <div>
                         {replayComplete ? (
                             <Card className="bg-zinc-900 border-zinc-800 p-6 text-center space-y-4">

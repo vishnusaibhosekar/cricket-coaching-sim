@@ -45,56 +45,6 @@ export function ReplayControls({
                     >
                         <RotateCcw className="h-4 w-4" />
                     </Button>
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={onPreviousBall}
-                        disabled={currentBallIndex === 0}
-                        className="bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700 disabled:opacity-50"
-                    >
-                        <SkipBack className="h-4 w-4" />
-                    </Button>
-                    <Button
-                        variant="default"
-                        size="icon"
-                        onClick={onPlayPause}
-                        className="bg-blue-600 hover:bg-blue-700 text-white"
-                    >
-                        {isPlaying ? (
-                            <Pause className="h-5 w-5" />
-                        ) : (
-                            <Play className="h-5 w-5" />
-                        )}
-                    </Button>
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={onNextBall}
-                        disabled={currentBallIndex >= totalBalls - 1}
-                        className="bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700 disabled:opacity-50"
-                    >
-                        <SkipForward className="h-4 w-4" />
-                    </Button>
-                </div>
-
-                {/* Speed Control */}
-                <div className="flex items-center gap-2">
-                    <span className="text-xs text-zinc-400">Speed:</span>
-                    {[1, 2, 3].map((speed) => (
-                        <Button
-                            key={speed}
-                            variant={playbackSpeed === speed ? 'default' : 'outline'}
-                            size="sm"
-                            onClick={() => onSpeedChange(speed)}
-                            className={
-                                playbackSpeed === speed
-                                    ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                                    : 'bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700'
-                            }
-                        >
-                            {speed}x
-                        </Button>
-                    ))}
                 </div>
             </div>
 
