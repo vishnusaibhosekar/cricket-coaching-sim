@@ -1,8 +1,11 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { GeminiScore } from '@/lib/types';
+import { toast } from 'sonner';
 
 interface ScoreRevealProps {
     score: GeminiScore;
@@ -10,6 +13,30 @@ interface ScoreRevealProps {
 }
 
 export function ScoreReveal({ score, decisionType }: ScoreRevealProps) {
+    const [animatedScore, setAnimatedScore] = useState(0);
+    const [copied, setCopied] = useState(false);
+
+    // Stage 4: Animate score counting up
+    useEffect(() => {
+        const duration = 1500; // 1.5 seconds
+        const steps = 30;
+        const increment = score.total_score / steps;
+        const stepDuration = duration / steps;
+
+        let current = 0;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= score.total_score) {
+                setAnimatedScore(score.total_score);
+                clearInterval(timer);
+            } else {
+                setAnimatedScore(Math.floor(current));
+            }
+        }, stepDuration);
+
+        return () => clearInterval(timer);
+    }, [score.total_score]);
+
     const getScoreColor = (score: number) => {
         if (score >= 75) return 'text-green-400';
         if (score >= 50) return 'text-yellow-400';
@@ -22,6 +49,20 @@ export function ScoreReveal({ score, decisionType }: ScoreRevealProps) {
         return 'bg-red-500';
     };
 
+    // Stage 4: Share button functionality
+    const handleShare = async () => {
+        const shareText = `I scored ${score.total_score}/100 on Cricket Coaching Simulator! 🏏\n\nSituation Awareness: ${score.situation_awareness}/25\nMatchup Intelligence: ${score.matchup_intelligence}/25\nRisk-Reward: ${score.risk_reward}/25\nStrategic Creativity: ${score.strategic_creativity}/25\n\nCan you beat my tactical IQ? #GoogleCloud #GoogleCloudAPL #BuildWithAI`;
+
+        try {
+            await navigator.clipboard.writeText(shareText);
+            setCopied(true);
+            toast.success('Score copied to clipboard!');
+            setTimeout(() => setCopied(false), 2000);
+        } catch (error) {
+            toast.error('Failed to copy to clipboard');
+        }
+    };
+
     return (
         <Card className="p-6 bg-zinc-900 border-zinc-800">
             <div className="text-center mb-6">
@@ -31,8 +72,8 @@ export function ScoreReveal({ score, decisionType }: ScoreRevealProps) {
                 <h3 className="text-4xl font-bold text-white mb-2">
                     Tactical Score
                 </h3>
-                <p className={`text-6xl font-bold ${getScoreColor(score.total_score)}`}>
-                    {score.total_score}/100
+                <p className={`text-6xl font-bold ${getScoreColor(score.total_score)} transition-all duration-300`}>
+                    {animatedScore}/100
                 </p>
             </div>
 
@@ -67,11 +108,20 @@ export function ScoreReveal({ score, decisionType }: ScoreRevealProps) {
                 <p className="text-zinc-300">{score.explanation}</p>
             </div>
 
-            <div className="p-4 bg-zinc-800 rounded-lg">
+            <div className="p-4 bg-zinc-800 rounded-lg mb-4">
                 <p className="text-sm text-zinc-400">
                     <span className="font-semibold">Captain's Choice:</span> {score.comparison_to_captain}
                 </p>
             </div>
+
+            {/* Stage 4: Share button */}
+            <Button
+                onClick={handleShare}
+                className="w-full mt-4"
+                variant={copied ? "secondary" : "default"}
+            >
+                {copied ? '✓ Copied!' : 'Share Your Score'}
+            </Button>
         </Card>
     );
 }

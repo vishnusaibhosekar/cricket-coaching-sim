@@ -1,40 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { scoreDecision } from '@/lib/gemini';
-import { updateDecisionScore } from '@/lib/insforge';
-import { MatchState, DecisionType, BowlingChoice, FieldPlacementChoice } from '@/lib/types';
+import { mockGeminiScore } from '@/lib/mock-data';
 
+// Stage 3: Mock Gemini scoring endpoint
 export async function POST(request: NextRequest) {
     try {
-        const body = await request.json();
-        const { decisionId, matchState, decisionType, userChoice, actualChoice } = body;
+        const { decision, matchContext } = await request.json();
 
-        if (!decisionId || !matchState || !decisionType || !userChoice || !actualChoice) {
-            return NextResponse.json(
-                { error: 'Missing required fields' },
-                { status: 400 }
-            );
-        }
+        // Simulate Gemini API delay (2 seconds)
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
-        // Score the decision using Gemini
-        const geminiScore = await scoreDecision(
-            matchState,
-            decisionType as DecisionType,
-            userChoice as BowlingChoice | FieldPlacementChoice,
-            actualChoice as BowlingChoice | FieldPlacementChoice
-        );
+        console.log('Scoring decision:', decision);
+        console.log('Match context:', matchContext);
 
-        // Update the decision with the score
-        await updateDecisionScore(
-            decisionId,
-            geminiScore.total_score,
-            geminiScore
-        );
-
-        return NextResponse.json({ success: true, score: geminiScore });
+        // Return mock Gemini score
+        return NextResponse.json(mockGeminiScore);
     } catch (error) {
-        console.error('Error in decision scoring:', error);
         return NextResponse.json(
-            { error: 'Failed to score decision', details: error instanceof Error ? error.message : 'Unknown error' },
+            { error: 'Failed to score decision' },
             { status: 500 }
         );
     }

@@ -1,27 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { submitDecision } from '@/lib/insforge';
-import { Decision } from '@/lib/types';
 
+// Stage 3: Mock decision submission endpoint
 export async function POST(request: NextRequest) {
     try {
-        const decision: Decision = await request.json();
+        const decision = await request.json();
 
-        // Validate required fields
-        if (!decision.match_id || !decision.over_number || !decision.decision_type || !decision.user_choice) {
-            return NextResponse.json(
-                { error: 'Missing required fields' },
-                { status: 400 }
-            );
-        }
+        console.log('Decision submitted:', decision);
 
-        // Submit decision to InsForge
-        const result = await submitDecision(decision);
-
-        return NextResponse.json({ success: true, data: result });
+        // In production, this would store in InsForge database
+        // For now, just return success
+        return NextResponse.json({
+            success: true,
+            decisionId: 'mock-id-' + Date.now(),
+            message: 'Decision submitted successfully'
+        });
     } catch (error) {
-        console.error('Error in decision submit:', error);
         return NextResponse.json(
-            { error: 'Failed to submit decision', details: error instanceof Error ? error.message : 'Unknown error' },
+            { error: 'Failed to submit decision' },
             { status: 500 }
         );
     }

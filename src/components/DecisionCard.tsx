@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MatchState, BowlingChoice, FieldPlacementChoice } from '@/lib/types';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -13,12 +13,40 @@ interface DecisionCardProps {
     decisionType: 'bowling_change' | 'field_placement';
     overNumber: number;
     onSubmit: (decision: any) => void;
+    initialScore?: any; // Stage 3: Accept initial score from parent
 }
 
-export function DecisionCard({ matchState, decisionType, overNumber, onSubmit }: DecisionCardProps) {
+export function DecisionCard({ matchState, decisionType, overNumber, onSubmit, initialScore }: DecisionCardProps) {
     const [selectedBowler, setSelectedBowler] = useState<string>('');
     const [submitted, setSubmitted] = useState(false);
-    const [score, setScore] = useState<any>(null);
+    const [score, setScore] = useState<any>(initialScore);
+    // Stage 2: Add countdown timer
+    const [timeRemaining, setTimeRemaining] = useState(decisionType === 'bowling_change' ? 45 : 60);
+
+    // Update score if initialScore changes
+    useEffect(() => {
+        if (initialScore) {
+            setScore(initialScore);
+            setSubmitted(true);
+        }
+    }, [initialScore]);
+
+    // Timer countdown
+    useEffect(() => {
+        if (submitted) return;
+
+        const timer = setInterval(() => {
+            setTimeRemaining(prev => {
+                if (prev <= 1) {
+                    clearInterval(timer);
+                    return 0;
+                }
+                return prev - 1;
+            });
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, [submitted]);
 
     const currentTeam = matchState.currentInnings === 1 ? matchState.team1 : matchState.team2;
 
@@ -61,9 +89,16 @@ export function DecisionCard({ matchState, decisionType, overNumber, onSubmit }:
     return (
         <Card className="p-6 bg-zinc-900 border-zinc-800">
             <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">
-                    {decisionType === 'bowling_change' ? 'BOWLING CHANGE' : 'FIELD PLACEMENT'}
-                </h3>
+                <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-2xl font-bold text-white">
+                        {decisionType === 'bowling_change' ? 'BOWLING CHANGE' : 'FIELD PLACEMENT'}
+                    </h3>
+                    {!submitted && (
+                        <div className={`text-2xl font-bold ${timeRemaining <= 10 ? 'text-red-500' : 'text-white'}`}>
+                            {timeRemaining}s
+                        </div>
+                    )}
+                </div>
                 <p className="text-zinc-400">
                     Over {overNumber + 1} | {currentTeam.name} {currentTeam.score}/{currentTeam.wickets} ({currentTeam.overs} ov)
                 </p>

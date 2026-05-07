@@ -1,20 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { getLeaderboard } from '@/lib/insforge';
+import { NextResponse } from 'next/server';
+import { mockLeaderboard } from '@/lib/mock-data';
 
-export async function GET(request: NextRequest) {
-    try {
-        const { searchParams } = new URL(request.url);
-        const matchId = searchParams.get('matchId') || process.env.NEXT_PUBLIC_MATCH_ID || 'srh-vs-pbks-2026-05-06';
+// Stage 3: Mock leaderboard endpoint
+export async function GET() {
+    // Simulate a small delay
+    await new Promise(resolve => setTimeout(resolve, 100));
 
-        // Get leaderboard data
-        const leaderboard = await getLeaderboard(matchId);
-
-        return NextResponse.json(leaderboard);
-    } catch (error) {
-        console.error('Error fetching leaderboard:', error);
-        return NextResponse.json(
-            { error: 'Failed to fetch leaderboard', details: error instanceof Error ? error.message : 'Unknown error' },
-            { status: 500 }
-        );
-    }
+    return NextResponse.json(mockLeaderboard);
 }
